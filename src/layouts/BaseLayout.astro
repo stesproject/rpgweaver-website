@@ -1,0 +1,97 @@
+---
+import "../styles/global.css";
+import type { SupportedLang } from "../i18n/config";
+import { useTranslations, localizeUrl } from "../i18n/utils";
+
+interface Props {
+  lang: SupportedLang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const enUrl = new URL(localizeUrl("/", "en"), Astro.site);
+const itUrl = new URL(localizeUrl("/", "it"), Astro.site);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{t("meta.title")}</title>
+    <meta name="description" content={t("meta.description")} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="it" href={itUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
+    <link rel="icon" type="image/png" href="/rpgweaver-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={t("meta.title")} />
+    <meta property="og:description" content={t("meta.description")} />
+    <meta property="og:image" content={new URL("/media/hero-main.png", Astro.site)} />
+    <meta property="og:image:alt" content={t("meta.ogImageAlt")} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={t("meta.title")} />
+    <meta name="twitter:description" content={t("meta.description")} />
+    <meta name="twitter:image" content={new URL("/media/hero-main.png", Astro.site)} />
+
+    <script is:inline>
+      (function () {
+        function getSystemTheme() {
+          return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+
+        function getInitialTheme() {
+          try {
+            const stored = localStorage.getItem("theme");
+            if (stored === "dark" || stored === "light") {
+              return stored;
+            }
+          } catch (_) {}
+          return getSystemTheme();
+        }
+
+        function applyTheme(theme) {
+          const root = document.documentElement;
+          if (theme === "dark") {
+            root.classList.add("dark");
+          } else {
+            root.classList.remove("dark");
+          }
+          root.dataset.theme = theme;
+          window.dispatchEvent(new CustomEvent("theme-change", { detail: { theme } }));
+        }
+
+        applyTheme(getInitialTheme());
+
+        window.__setWebsiteTheme = function (theme, persist = true) {
+          if (persist) {
+            try {
+              localStorage.setItem("theme", theme);
+            } catch (_) {}
+          }
+          applyTheme(theme);
+        };
+
+        window.__getWebsiteTheme = function () {
+          return document.documentElement.classList.contains("dark") ? "dark" : "light";
+        };
+
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        mediaQuery.addEventListener("change", function (e) {
+          try {
+            localStorage.removeItem("theme");
+          } catch (_) {}
+          applyTheme(e.matches ? "dark" : "light");
+        });
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#090912] dark:text-slate-100 antialiased selection:bg-violet-500/30 selection:text-violet-900 dark:selection:text-violet-200 transition-colors duration-200">
+    <slot />
+  </body>
+</html>

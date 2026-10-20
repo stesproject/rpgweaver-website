@@ -1,0 +1,36 @@
+---
+interface Props {
+  badge: string;
+  title: string;
+  subtitle: string;
+  accent?: "violet" | "sky" | "amber" | "emerald" | "rose";
+}
+
+const { badge, title, subtitle, accent = "violet" } = Astro.props;
+
+const accentClasses = {
+  violet: "border-violet-500/30 bg-violet-500/10 text-violet-700 dark:text-violet-400",
+  sky: "border-sky-500/30 bg-sky-500/10 text-sky-700 dark:text-sky-400",
+  amber: "border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-400",
+  emerald: "border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400",
+  rose: "border-rose-500/30 bg-rose-500/10 text-rose-700 dark:text-rose-400"
+}[accent];
+---
+
+<div class="mx-auto max-w-3xl text-center mb-14">
+  <span
+    class:list={[
+      "inline-flex items-center gap-2 rounded-full border px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-4",
+      accentClasses
+    ]}
+  >
+    <span class="h-1.5 w-1.5 rounded-full bg-current"></span>
+    <span>{badge}</span>
+  </span>
+  <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+    {title}
+  </h2>
+  <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+    {subtitle}
+  </p>
+</div>

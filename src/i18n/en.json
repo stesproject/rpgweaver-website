@@ -1,0 +1,359 @@
+{
+  "meta": {
+    "title": "RPG Weaver — The Built-In 2D RPG Engine | Zero Plugins Needed",
+    "description": "An engine that sits between the simplicity of RPG Maker and the power of a professional-grade engine. Pixel movement, event AI, camera control, HUD health bars, infinite layers, and Pixi.js performance—100% built-in with zero external plugins."
+  },
+  "brand": {
+    "name": "RPG Weaver",
+    "tagline": "Simplicity of RPG Maker. Power of a Pro Engine.",
+    "logoAlt": "RPG Weaver Logo"
+  },
+  "nav": {
+    "noPlugins": "Zero Plugins",
+    "events": "Event Engine",
+    "visuals": "HUD & Visuals",
+    "mapping": "Layers & Assets",
+    "workflow": "Debug & Search",
+    "system": "System & Pixi.js",
+    "launchApp": "Launch Web App",
+    "switchLangLabel": "Switch website language",
+    "toggleThemeLabel": "Toggle light or dark theme",
+    "langEn": "EN",
+    "langIt": "IT"
+  },
+  "hero": {
+    "eyebrow": "100% Browser-Native 2D RPG Maker • Powered by Pixi.js",
+    "titleLine1": "The Simplicity of RPG Maker.",
+    "titleLine2": "The Power of a Pro Engine.",
+    "subtitle": "Stop hunting for dozens of broken third-party scripts. RPG Weaver builds everything you wish RPG Maker had directly into the core engine—from pixel movement, event-to-event collision triggers, and reusable event templates to HUD picture cropping, infinite map layers, and 60 FPS Pixi.js rendering.",
+    "primaryCta": "Launch RPG Weaver Now",
+    "secondaryCta": "Explore 22 Built-In Features",
+    "noInstallNote": "Runs instantly in your browser • Free default assets included • No account required",
+    "windowTitle": "RPG Weaver — Chronicles of Aetheria (Live Workspace)",
+    "screenshotAlt": "RPG Weaver full editor workspace showing Oakwood Village map, stacked and multi-area events, and the visual Event Editor",
+    "screenshotCaption": "Real workspace from RPG Weaver: visual map canvas, multi-tile & stacked events, templates, and color-coded event commands—all out of the box.",
+    "videoTabLabel": "Watch Interactive Workflow (Video)",
+    "imageTabLabel": "High-Res Editor View (Screenshot)",
+    "stats": {
+      "s1Value": "0",
+      "s1Label": "External Plugins Needed",
+      "s2Value": "22+",
+      "s2Label": "Pro Built-In Upgrades",
+      "s3Value": "∞",
+      "s3Label": "Reorderable Map Layers",
+      "s4Value": "60 FPS",
+      "s4Label": "Pixi.js WebGL Runtime"
+    }
+  },
+  "noPlugins": {
+    "badge": "Goodbye Plugin Hell",
+    "title": "You Won’t Need External Plugins Anymore.",
+    "subtitle": "In traditional RPG engines, even basic mechanics like making an NPC follow another event, creating a health bar, or stacking two events on the same tile require downloading and maintaining dozens of incompatible community plugins. In RPG Weaver, it is all natively built-in.",
+    "oldWayTitle": "The Old RPG Maker Workflow",
+    "oldWaySubtitle": "Fragile projects held together by 50+ third-party scripts",
+    "oldPoint1": "Incompatible plugins breaking each other whenever your project grows",
+    "oldPoint2": "Cryptic notetags and manual JavaScript calls just to move the camera or spawn an event",
+    "oldPoint3": "Rigid 4-layer map limits, fixed 48×48 grids, and blind X/Y coordinate guessing for pictures",
+    "oldPoint4": "No way for events to transfer between maps or detect when Event X touches Event Y",
+    "newWayTitle": "The RPG Weaver Built-In Standard",
+    "newWaySubtitle": "Visual dialogs, live previews, and rock-solid native commands",
+    "newPoint1": "Every essential mechanic is a first-class Event Command or Database toggle",
+    "newPoint2": "Interactive visual previews for Show Picture placement, Show Fog motion, and spritesheet slicing",
+    "newPoint3": "Infinite reorderable map layers, customizable tile sizes (16px–64px), and custom viewport resolutions",
+    "newPoint4": "Native Event Templates, Multi-Area triggers, Stacked Events, and one-click DevTools console debugging",
+    "builtInBadge": "100% Built-In",
+    "cards": {
+      "movementAi": {
+        "tag": "Replaces 15+ Movement Plugins",
+        "title": "Pixel Movement & Event AI",
+        "desc": "Switch between classic Grid or smooth 8-direction Pixel movement, make events chase other events, and trigger branches when Event X touches Event Y."
+      },
+      "cameraAndTransfer": {
+        "tag": "Replaces Camera & Transfer Scripts",
+        "title": "Dynamic Camera & Cross-Map Events",
+        "desc": "Pan the camera smoothly to any event or coordinate, and transfer not just the player—but any NPC or map event—across maps."
+      },
+      "hudAndPictures": {
+        "tag": "Replaces HUD & Message Plugins",
+        "title": "HUD Health Bars, Previews & Fogs",
+        "desc": "Crop pictures 0–100% by variable for instant HP/MP bars, drag pictures visually in a live viewport preview, and layer animated map fogs."
+      },
+      "templatesAndState": {
+        "tag": "Replaces Event Spawner Plugins",
+        "title": "Event Templates, Stacking & Area",
+        "desc": "Save events as reusable templates, spawn instances dynamically, stack unlimited events on one tile, create multi-tile area events, and persist positions."
+      },
+      "layersAndTiles": {
+        "tag": "Replaces Mapping & Slicing Scripts",
+        "title": "Infinite Layers & Custom Slicing",
+        "desc": "Add unlimited tile layers, reorder ground/props/characters/fogs freely, and customize autotile modes, animation speed, and character frame grids."
+      },
+      "inputsAndDebug": {
+        "tag": "Replaces Keybind & Debug Plugins",
+        "title": "Custom Inputs, Search & Console Debug",
+        "desc": "Bind custom keyboard actions, filter every command and database list in real time, and output comments directly to console.log during playtest."
+      }
+    }
+  },
+  "sections": {
+    "events": {
+      "badge": "1 • Next-Gen Event Engine & AI",
+      "title": "Events That Actually Do What You Want—Out of the Box",
+      "subtitle": "Ranked from the most requested RPG Maker upgrades: sub-tile pixel movement, smart pursuit routes, event-to-event collision checks, cross-map NPC transfers, cinematic camera targets, templates, multi-area bounds, stacked events, and persistent positions."
+    },
+    "visuals": {
+      "badge": "2 • Built-In HUD, Visuals & Atmosphere",
+      "title": "Build Custom Health Bars, Cutscenes & Fogs Visually",
+      "subtitle": "No more blind coordinate math or third-party HUD scripts. Preview every picture placement, crop bars dynamically with game variables, tune typewriter speeds, and layer atmospheric fogs in real time."
+    },
+    "mapping": {
+      "badge": "3 • Infinite Mapping & Pro Asset Pipeline",
+      "title": "Unlimited Map Layers & Total Spritesheet Control",
+      "subtitle": "Break free from rigid layer slots and fixed spritesheet naming rules. Create as many layers as your scene demands and slice any tileset, animated autotile, or character sheet directly inside the Resource Manager."
+    },
+    "workflow": {
+      "badge": "4 • Fast Workflow, Instant Filtering & Easy Debug",
+      "title": "Find Anything in Milliseconds. Debug Without Guesswork.",
+      "subtitle": "Every list in RPG Weaver is searchable in real time, and inspecting your game state takes nothing more than a checkbox on a Comment command or opening your browser DevTools."
+    },
+    "system": {
+      "badge": "5 • Engine Customization & Pixi.js Performance",
+      "title": "Your Inputs, Your Grid Size, Your Resolution—At 60 FPS",
+      "subtitle": "Tailor keybindings, tile dimensions, and camera viewport sizes in seconds, all rendered by a hardware-accelerated Pixi.js WebGL/WebGPU runtime."
+    }
+  },
+  "features": {
+    "pixelMovement": {
+      "badge": "#1 • Database → System → Movement Mode",
+      "replaces": "Replaces Pixel Movement Plugins",
+      "title": "Native Pixel Movement & Classic Grid Mode",
+      "description": "Switch your entire game between traditional tile-by-tile Grid movement and smooth 8-directional sub-tile Pixel movement with a single click in Database → System.",
+      "b1": "One-click toggle between Grid (Tile-by-tile) and Pixel (Free 8-dir / Sub-tile) movement",
+      "b2": "Smooth diagonal movement and sub-tile collision handling built directly into the runtime",
+      "b3": "Works seamlessly with autonomous NPC movement routes, touch triggers, and camera tracking",
+      "caption": "Database → System tab showing the native Movement Mode selector (Grid vs. Pixel) alongside live sub-tile playtest movement."
+    },
+    "eventFollow": {
+      "badge": "#2 • Set Movement Route → Move Toward...",
+      "replaces": "Replaces Smart Follower & Chase Plugins",
+      "title": "Make Events Follow Other Events (or the Player)",
+      "description": "Inside Set Movement Route, click Move Toward... (or Move Away / Turn Toward) to make any event dynamically pursue or face either the Player or any other Map Event on the map.",
+      "b1": "Select 'Player', 'This Event', or any specific Map Event from the target dropdown",
+      "b2": "Combine Move Toward, Move Away, Turn Toward, and Turn Away with custom repeat counts",
+      "b3": "Use in both Autonomous Movement routes and scripted Set Movement Route event commands",
+      "caption": "Set Movement Route dialog with the Move Toward... target selector open, allowing an event to chase the Player or any Map Event."
+    },
+    "eventTouch": {
+      "badge": "#3 • Conditional Branch → Page 3 → Event Touching",
+      "replaces": "Replaces Event Collision & Proximity Plugins",
+      "title": "Trigger Logic When Event X Is Touching Event Y",
+      "description": "Need a puzzle boulder to trigger a floor switch, or a patrol guard to catch an escort NPC? Page 3 of Conditional Branch includes a native 'Event X is touching Event Y' check.",
+      "b1": "Compare 'This Event' or any Map Event X against the Player or any Map Event Y",
+      "b2": "Works accurately with both 1×1 events and larger Multi-Area (W × H) events",
+      "b3": "Supports optional Else branches for clean collision and state-machine logic",
+      "caption": "Conditional Branch modal on Page 3 highlighting the native 'Event [EV001: Companion Fox] is touching [EV002: Patrol Guard]' condition."
+    },
+    "eventTransfer": {
+      "badge": "#4 • Transfer Command → Subject to Transfer",
+      "replaces": "Replaces Cross-Map NPC Transfer Plugins",
+      "title": "Transfer Any Event Across Maps—Not Just the Player",
+      "description": "The Transfer event command isn't limited to the player anymore. Choose 'Subject to Transfer' to relocate the Player, This Event, or any Map Event to another map or coordinate.",
+      "b1": "Subject to Transfer dropdown supports Player, This Event, or any event on the current map",
+      "b2": "Designate destination coordinates directly on a visual map preview or via Game Variables",
+      "b3": "Configure post-transfer facing direction and screen fade transitions in one dialog",
+      "caption": "Transfer event command dialog showing 'Subject to Transfer: EV001: Companion Fox' moving to Crystal Sanctum (10, 8)."
+    },
+    "cameraTarget": {
+      "badge": "#5 • Event Command → Change Camera Target...",
+      "replaces": "Replaces Camera Control & Cutscene Pan Plugins",
+      "title": "Control the Camera & Follow Any Target Smoothly",
+      "description": "Direct cinematic cutscenes effortlessly. Use Change Camera Target... to lock the camera onto the Player, This Event, any Map Event, or fixed map coordinates with smooth or instant transitions.",
+      "b1": "Target the Player, None (Fixed Camera Position), This Event, or any specific Map Event",
+      "b2": "Choose between Instant snap or Smooth interpolated panning with custom frame duration",
+      "b3": "Includes 'Wait for Completion' so dialogue or animations fire right when the camera arrives",
+      "caption": "Change Camera Target dialog configured to smoothly pan the viewport to EV002: Patrol Guard over 45 frames."
+    },
+    "eventTemplates": {
+      "badge": "#6 • Event Editor Star + Spawn Event Command",
+      "replaces": "Replaces Event Spawner & Prefab Plugins",
+      "title": "Reusable Event Templates & Dynamic Event Spawning",
+      "description": "Click the Star icon in the Event Editor header to save any event as a reusable Template. Place linked instances from the sidebar Templates tab or spawn them at runtime using Spawn Event...",
+      "b1": "Edit a source template once and automatically synchronize all linked instances across maps",
+      "b2": "Spawn Event... command instantiates any template at direct (X, Y) or variable coordinates",
+      "b3": "Optionally store the newly spawned Event ID into a Game Variable for immediate scripting",
+      "caption": "Spawn Event command dialog selecting the 'Companion Fox' template and storing the spawned Event ID into Variable #0003."
+    },
+    "multiAreaEvents": {
+      "badge": "#7 • Event Editor Header → Area (W × H)",
+      "replaces": "Replaces Multi-Tile Trigger & Large Hitbox Plugins",
+      "title": "Multi-Area Events Larger Than 1×1 Tile",
+      "description": "Stop duplicating identical trigger events across wide doors, bridges, or boss arenas. Set any event's Width and Height (Area W × H) directly in the Event Editor or drag-create it with the Rectangle tool.",
+      "b1": "Set custom Width × Height tile dimensions (e.g., 3×2 Ancient Gate) right in the Event Editor",
+      "b2": "Visual orange multi-tile boundary renders clearly on the map canvas",
+      "b3": "All touch, action, and collision checks automatically respect the full W × H footprint",
+      "caption": "EV003: Ancient Gate configured with a 3×2 tile area in the Event Editor and highlighted on the map canvas."
+    },
+    "stackedEvents": {
+      "badge": "#8 • Multi-Event Tile Stacking & Context Menu",
+      "replaces": "Replaces Event Stacking & Overlap Plugins",
+      "title": "Stack Multiple Events on the Exact Same Tile",
+      "description": "Place as many events as you need on top of each other on the same (X, Y) coordinate. Hover to see all stacked events at a glance, or right-click to edit, copy, delete, or add another event on that tile.",
+      "b1": "Unlimited events can coexist on the same map cell without overwriting each other",
+      "b2": "Hover tooltip lists every event stacked at (X, Y) with its ID and name",
+      "b3": "Right-click context menu gives individual Edit/Copy/Delete controls for each stacked event plus '+ Create Another Event Here'",
+      "caption": "Right-clicking tile (9, 8) reveals EV004: Chest Trigger, EV005: Light Aura Controller, and EV006: Trap Sensor stacked on one cell."
+    },
+    "savePosition": {
+      "badge": "#9 • Event Editor → Options → Save Position",
+      "replaces": "Replaces Persist Event Position Plugins",
+      "title": "One-Click 'Save Position' for Persistent Puzzles & NPCs",
+      "description": "Pushed a boulder into place or moved an NPC during a quest? Just check 'Save Position' in the Event Editor's Options panel so its coordinates automatically persist across map transfers and save files.",
+      "b1": "Built-in 'Save Position' checkbox right alongside Walk Animation, Direction Fix, and Through",
+      "b2": "Automatically remembers the event's X/Y position when leaving and re-entering the map",
+      "b3": "Persists cleanly inside player save slots without manual X/Y variable tracking",
+      "caption": "Event Editor open on EV001: Companion Fox showing the built-in 'Save Position' checkbox enabled in the Options panel."
+    },
+    "cropPicture": {
+      "badge": "#10 • Event Command → Crop Picture...",
+      "replaces": "Replaces Custom HUD & Health Bar Plugins",
+      "title": "Easily Use Pictures as Dynamic Health & Mana Bars",
+      "description": "Building a custom HUD takes seconds: display a bar graphic with Show Picture, then use Crop Picture... to bind its visible width or height percentage (0–100%) to any Game Variable.",
+      "b1": "Bind horizontal Crop Width (%) and/or vertical Crop Height (%) directly to Game Variables",
+      "b2": "Values from 0 to 100 dynamically clip the picture without stretching or distorting pixel art",
+      "b3": "Perfect for player HP/MP bars, boss shields, stamina meters, and cooldown gauges",
+      "caption": "Crop Picture dialog binding Picture #1's width and height percentages (0–100%) to Player HP % and Boss Shield % variables."
+    },
+    "picturePreview": {
+      "badge": "#11 • Event Command → Show Picture...",
+      "replaces": "Replaces Visual Picture Placement Plugins",
+      "title": "Interactive Picture Placement Preview",
+      "description": "Never guess X and Y screen coordinates again. Show Picture... includes a live interactive viewport preview where you can drag and position your picture visually and see exact coordinates update in real time.",
+      "b1": "Live scaled viewport canvas (e.g., 816×624) displays your picture in context",
+      "b2": "Drag the picture directly inside the preview box or fine-tune X, Y, Scale, Opacity, and Blend Mode",
+      "b3": "Supports Top-Left or Center origin and both Direct and Variable coordinate designation",
+      "caption": "Show Picture dialog featuring the interactive Placement Preview canvas for drag-and-drop HUD and cutscene positioning."
+    },
+    "messageTypewriting": {
+      "badge": "#12 • Event Command → Show Text...",
+      "replaces": "Replaces Message Core & Typewriter Speed Plugins",
+      "title": "Message Typewriting Speed & Rich Text Formatting",
+      "description": "Control the exact pacing of every dialogue line. Show Text... lets you set Typewriter Speed in characters per second, attach face graphics and speaker names, and preview rich text tags live.",
+      "b1": "Configure 'Typewriter Speed (chars/sec)' per message (or 0 for instant display)",
+      "b2": "Toolbar buttons for Bold (\\B), Italic (\\I), Color (\\C[n]), Text Speed (\\S[n]), and Variable (\\V[n]) tags",
+      "b3": "Live message box preview renders speaker name, face portrait, window style, and formatted text",
+      "caption": "Show Text dialog showing Typewriter Speed set to 25 chars/sec, rich text formatting toolbar, and live window preview."
+    },
+    "controlFogs": {
+      "badge": "#13 • Event Command → Show Fog / Change Fog",
+      "replaces": "Replaces Multi-Layer Fog & Overlay Plugins",
+      "title": "Control Animated Map Fogs with Live Map Preview",
+      "description": "Layer rolling mist, clouds, sunbeams, or darkness canopies over your map. Show Fog... renders a live animated preview directly over your current map as you tweak speed, scale, opacity, blend mode, and color tone.",
+      "b1": "Support multiple independent fog layers by ID with horizontal/vertical scroll velocity (Speed X / Y)",
+      "b2": "Adjust Scale X/Y (%), Opacity, Blend Mode (Normal, Additive, Multiply, Screen), and RGBA Tint/Tone",
+      "b3": "Transition fog properties smoothly over time using Change Fog... or remove them with Erase Fog...",
+      "caption": "Show Fog dialog rendering a live scrolling additive fog preview directly over the Oakwood Village map."
+    },
+    "infiniteLayers": {
+      "badge": "#14 • Map Layers Manager (Shortcut: L)",
+      "replaces": "Replaces Unlimited Layer & Z-Order Plugins",
+      "title": "Infinite Map Layers & Free Render Stack Reordering",
+      "description": "Why settle for 4 fixed map layers? Add as many named tile layers as you want, toggle visibility, and freely reorder where Parallax, Shadows, Characters, and Fogs render in the layer stack.",
+      "b1": "Create unlimited tile layers (Ground, Cobble Paths, Water Edge, Fortress Walls, Canopy Roofs, etc.)",
+      "b2": "Move any tile layer OR special engine layer (Characters, Shadows, Fogs) up and down the Z-stack",
+      "b3": "Rename layers, toggle eye visibility in the editor, or delete unused layers at any time",
+      "caption": "Map Layers modal showing 6 custom-named tile layers interleaved with reorderable Shadows, Characters, and Fogs layers."
+    },
+    "autotilesAnimated": {
+      "badge": "#15 • Resource Manager → Autotiles",
+      "replaces": "Replaces Custom Autotile & Animation Speed Plugins",
+      "title": "Full Support for Autotiles, Animated Tiles & Speed Control",
+      "description": "Import any autotile sheet and configure how RPG Weaver slices and animates it. Choose between Full 47-tile or Edge 16-tile autotile formats, enable animation, set frame count, and dial in exact FPS speed.",
+      "b1": "Switch between Full Autotile (47 tiles, corners + edges), Edge Autotile (16 tiles), or Single Tile",
+      "b2": "Toggle 'Animated Tile', specify Animation Frames, and tune Animation Speed (1–30 fps)",
+      "b3": "Interactive slicing preview and live animated tile preview right inside the Resource Manager",
+      "caption": "Resource Manager open on Autotiles showing Full 47-tile format, 3 animation frames at 4 FPS, and live animated water preview."
+    },
+    "characterSlicing": {
+      "badge": "#16 • Resource Manager → Characters",
+      "replaces": "Replaces Spritesheet Frame & Slicing Plugins",
+      "title": "Full Control Over Character Spritesheet Slicing",
+      "description": "No more renaming files with '$' or '%' prefixes just to tell the engine how many frames a sprite has. Configure Characters Across/Down, Step Frames per Char, Directions, and Vertical Offset visually.",
+      "b1": "Customize Characters Across, Characters Down, Step Frames per Char, and Directions per Char (1, 2, 4, 8)",
+      "b2": "Fine-tune Vertical Offset (px) so tall or floating sprites align perfectly with the tile grid",
+      "b3": "Live animated walking preview tests Down, Left, Right, and Up cycles immediately",
+      "caption": "Resource Manager open on Characters showing custom slicing controls and live 4-direction walking frame previews."
+    },
+    "filterableLists": {
+      "badge": "#17 • Instant Search & Filter Across Every Modal",
+      "replaces": "Replaces Editor Search & Command Finder Addons",
+      "title": "Filterable Lists Everywhere in the Editor",
+      "description": "Whether you're searching for an Event Command across tabs, filtering 200 events on a huge map, looking up a Map in the tree, or finding a Switch, Variable, or Database entry—every list filters as you type.",
+      "b1": "Insert Event Command modal filters across all command categories in real time",
+      "b2": "Sidebar instant search bars for both Map Events/Templates and the Map Tree",
+      "b3": "Built-in search filtering inside Database tabs, Switches Manager, Variables Manager, and Resource Manager",
+      "caption": "Insert Event Command modal filtering commands across all tabs as you type, alongside sidebar Event and Map search bars."
+    },
+    "easyDebug": {
+      "badge": "#18 • Comment Console Log + DevTools + Debug Tab",
+      "replaces": "Replaces Runtime Debug & Console Inspector Plugins",
+      "title": "Easy Debug: Comment console.log & Browser Inspector",
+      "description": "Debugging events is effortless. Check 'Output comment to developer console (console.log during playtest)' inside any Comment... command, and inspect live game objects, switches, and variables directly in your browser's DevTools.",
+      "b1": "One checkbox turns any Comment... command into a live runtime console.log statement during playtest",
+      "b2": "Inspect window.$gameSwitches, $gameVariables, $gameMap, and $gamePlayer directly in browser DevTools",
+      "b3": "Pre-configure starting ON/OFF switches and variable values in Database → Debug for instant test scenarios",
+      "caption": "Comment command dialog with 'Output comment to developer console (console.log during playtest)' checked."
+    },
+    "customInputs": {
+      "badge": "#19 • Database → Inputs Tab",
+      "replaces": "Replaces Keyboard Remapper & Custom Key Plugins",
+      "title": "Customizable Game Inputs & Custom Named Actions",
+      "description": "Remap default movement and interaction keys, toggle mouse movement controls, or create your own custom named input actions (like 'Toggle Lantern' or 'Quick Heal') to check in Conditional Branches.",
+      "b1": "Bind multiple keyboard keys to Move Up/Down/Left/Right, Interact/OK, and Cancel/Menu",
+      "b2": "Click '+ Add Input' to define unlimited custom named actions with interactive key-press capture",
+      "b3": "Check any custom input action directly inside Conditional Branch (Tab 4 → Input) without writing code",
+      "caption": "Database → Inputs tab showing standard keybindings and custom game actions like 'Toggle Mystic Lantern (KeyF)'."
+    },
+    "customTileSize": {
+      "badge": "#20 • Database → System → Tile / Grid Size",
+      "replaces": "Replaces Grid Resolution & Tile Size Hack Plugins",
+      "title": "Customizable Tile & Grid Size (16×16 to 64×64)",
+      "description": "Making a retro 16×16 pixel-art adventure, a classic 32×32 JRPG, or a high-res 48×48 / 64×64 world? Select your project's native Tile / Grid Size right in Database → System.",
+      "b1": "Native support for 16×16 px, 32×32 px, 48×48 px, and 64×64 px tile grids",
+      "b2": "Map canvas, autotile slicing, collision checks, and camera movement automatically adapt to your grid size",
+      "b3": "Pair any tile size with either Grid or Pixel movement mode",
+      "caption": "Database → System tab highlighting the Tile / Grid Size selector supporting 16×16, 32×32, 48×48, and 64×64 px."
+    },
+    "customViewport": {
+      "badge": "#21 • Database → System → Camera Viewport",
+      "replaces": "Replaces Screen Resolution & Viewport Manager Plugins",
+      "title": "Customizable Game Viewport Dimensions",
+      "description": "Define the exact camera viewport resolution your game renders at. Pick from ready-made widescreen and retro presets or enter custom pixel dimensions.",
+      "b1": "Built-in presets for 816×624 (Default), 1280×720 (HD 16:9), 640×480 (4:3), and 320×240 (Pixel Art)",
+      "b2": "Enter any custom Width (px) and Height (px) for your camera viewport",
+      "b3": "Picture Placement Preview and Map Camera Controller immediately reflect your custom viewport size",
+      "caption": "Database → System tab showing Camera Viewport / Screen Resolution presets and custom width/height inputs."
+    },
+    "pixiPerformance": {
+      "badge": "#22 • Hardware-Accelerated Pixi.js Runtime",
+      "replaces": "Built for Smooth 60 FPS Web & Desktop Play",
+      "title": "Great Performance, Powered by Pixi.js",
+      "description": "Under the hood, RPG Weaver's playtest and exported games run on Pixi.js—delivering hardware-accelerated WebGL rendering, silky-smooth 60 FPS frame pacing, multi-layer fogs, and instant in-browser playtesting.",
+      "b1": "Hardware-accelerated Pixi.js rendering pipeline with live FPS counter badge in Playtest mode",
+      "b2": "Handles unlimited map layers, animated autotiles, additive fogs, and dozens of active events at 60 FPS",
+      "b3": "Instant zero-build playtesting from the Title Screen or directly from the Current Map (Ctrl+Shift+Enter)",
+      "caption": "Live Playtest running Oakwood Village at a locked 60 FPS powered by Pixi.js."
+    }
+  },
+  "cta": {
+    "badge": "Ready to Build Without Plugin Headaches?",
+    "title": "Start Your Project in Seconds—Right in Your Browser.",
+    "subtitle": "Launch RPG Weaver, click 'Start project with default assets', and experience a 2D RPG engine where every feature you need is already built in.",
+    "primaryBtn": "Open RPG Weaver Web App",
+    "secondaryBtn": "Review All 22 Built-In Features"
+  },
+  "footer": {
+    "description": "An engine that sits between the simplicity of RPG Maker and the complexity of a professional-grade engine—with zero external plugins needed.",
+    "launchApp": "Launch Web App (rpg-weaver.web.app)",
+    "copyright": "© 2026 RPG Weaver. Built for RPG creators everywhere."
+  }
+}

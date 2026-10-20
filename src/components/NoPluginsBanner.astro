@@ -1,0 +1,120 @@
+---
+import type { SupportedLang } from "../i18n/config";
+import { useTranslations } from "../i18n/utils";
+
+interface Props {
+  lang: SupportedLang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const replacedCategories = [
+  { key: "movementAi", icon: "Footprints" },
+  { key: "cameraAndTransfer", icon: "Camera" },
+  { key: "hudAndPictures", icon: "Crop" },
+  { key: "templatesAndState", icon: "Star" },
+  { key: "layersAndTiles", icon: "Layers" },
+  { key: "inputsAndDebug", icon: "Terminal" }
+];
+---
+
+<section id="no-plugins" class="relative py-20 sm:py-24 border-t border-slate-200/80 dark:border-slate-800/70 bg-slate-100/70 dark:bg-[#0c0c18]">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center mb-14">
+      <span class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-4">
+        <span class="h-1.5 w-1.5 rounded-full bg-current"></span>
+        <span>{t("noPlugins.badge")}</span>
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
+        {t("noPlugins.title")}
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+        {t("noPlugins.subtitle")}
+      </p>
+    </div>
+
+    <!-- Before vs After Comparison Banner -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+      <!-- Classic RPG Maker Plugin Hell -->
+      <div class="rounded-3xl border border-rose-500/25 bg-white/90 dark:bg-[#13111c]/90 p-6 sm:p-8 shadow-lg">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-rose-500/15 text-rose-500 font-bold">✕</span>
+          <div>
+            <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">{t("noPlugins.oldWayTitle")}</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">{t("noPlugins.oldWaySubtitle")}</p>
+          </div>
+        </div>
+        <ul class="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+          <li class="flex items-start gap-2.5">
+            <span class="text-rose-500 font-bold mt-0.5">•</span>
+            <span>{t("noPlugins.oldPoint1")}</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-rose-500 font-bold mt-0.5">•</span>
+            <span>{t("noPlugins.oldPoint2")}</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-rose-500 font-bold mt-0.5">•</span>
+            <span>{t("noPlugins.oldPoint3")}</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-rose-500 font-bold mt-0.5">•</span>
+            <span>{t("noPlugins.oldPoint4")}</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- The RPG Weaver Built-In Way -->
+      <div class="rounded-3xl border border-violet-500/40 bg-gradient-to-br from-violet-500/10 via-indigo-500/5 to-emerald-500/10 dark:from-[#17142b] dark:via-[#121222] dark:to-[#0f1c20] p-6 sm:p-8 shadow-xl ring-1 ring-violet-500/20">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400 font-bold">✓</span>
+          <div>
+            <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">{t("noPlugins.newWayTitle")}</h3>
+            <p class="text-xs text-violet-600 dark:text-violet-300 font-medium">{t("noPlugins.newWaySubtitle")}</p>
+          </div>
+        </div>
+        <ul class="space-y-3 text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-500 font-bold mt-0.5">✓</span>
+            <span>{t("noPlugins.newPoint1")}</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-500 font-bold mt-0.5">✓</span>
+            <span>{t("noPlugins.newPoint2")}</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-500 font-bold mt-0.5">✓</span>
+            <span>{t("noPlugins.newPoint3")}</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-500 font-bold mt-0.5">✓</span>
+            <span>{t("noPlugins.newPoint4")}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 6 Pillars Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {replacedCategories.map((cat) => (
+        <div class="rounded-2xl border border-slate-200/90 dark:border-slate-800/80 bg-white/90 dark:bg-[#121220]/90 p-5 shadow-md">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-mono font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400">
+              {t(`noPlugins.cards.${cat.key}.tag`)}
+            </span>
+            <span class="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
+              {t("noPlugins.builtInBadge")}
+            </span>
+          </div>
+          <h4 class="text-base font-extrabold text-slate-900 dark:text-white mb-1.5">
+            {t(`noPlugins.cards.${cat.key}.title`)}
+          </h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            {t(`noPlugins.cards.${cat.key}.desc`)}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,85 @@
+---
+import AppWindowFrame from "./AppWindowFrame.astro";
+
+interface Props {
+  badge: string;
+  replacesPlugin?: string;
+  title: string;
+  description: string;
+  bullets: string[];
+  mediaSrc: string;
+  posterSrc?: string;
+  mediaCaption: string;
+  isVideo?: boolean;
+  reverse?: boolean;
+}
+
+const {
+  badge,
+  replacesPlugin,
+  title,
+  description,
+  bullets,
+  mediaSrc,
+  posterSrc,
+  mediaCaption,
+  isVideo = false,
+  reverse = false
+} = Astro.props;
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center rounded-3xl border border-slate-200/90 dark:border-slate-800/80 bg-gradient-to-b from-white to-slate-50/90 dark:from-[#12121f]/90 dark:to-[#0d0d17]/90 p-6 sm:p-8 lg:p-10 shadow-xl shadow-slate-900/5 dark:shadow-black/45 ring-1 ring-slate-900/5 dark:ring-white/5">
+  <!-- Text Column -->
+  <div class:list={["lg:col-span-5 space-y-5", reverse ? "lg:order-2" : "lg:order-1"]}>
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-violet-700 dark:text-violet-300">
+        {badge}
+      </span>
+      {replacesPlugin && (
+        <span class="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">
+          <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+          </svg>
+          <span>{replacesPlugin}</span>
+        </span>
+      )}
+    </div>
+
+    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-snug">
+      {title}
+    </h3>
+
+    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+      {description}
+    </p>
+
+    <ul class="space-y-2.5 pt-1">
+      {bullets.map((bullet) => (
+        <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+          <span class="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-violet-500/15 dark:bg-violet-500/20 text-violet-600 dark:text-violet-400">
+            <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </span>
+          <span>{bullet}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Media Column -->
+  <div class:list={["lg:col-span-7", reverse ? "lg:order-1" : "lg:order-2"]}>
+    <AppWindowFrame
+      mediaSrc={mediaSrc}
+      posterSrc={posterSrc}
+      headerTitle={badge}
+      alt={title}
+      caption={mediaCaption}
+      isVideo={isVideo}
+    />
+  </div>
+</div>

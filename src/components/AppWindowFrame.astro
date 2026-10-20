@@ -1,0 +1,66 @@
+---
+interface Props {
+  mediaSrc: string;
+  posterSrc?: string;
+  headerTitle: string;
+  alt: string;
+  caption?: string;
+  isVideo?: boolean;
+  priority?: boolean;
+}
+
+const {
+  mediaSrc,
+  posterSrc,
+  headerTitle,
+  alt,
+  caption,
+  isVideo = false,
+  priority = false
+} = Astro.props;
+---
+
+<div class="group relative rounded-2xl border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-[#11111d] shadow-2xl shadow-slate-900/10 dark:shadow-black/75 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
+  <!-- Window Top Bar -->
+  <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800/80 bg-slate-100 dark:bg-[#171726] px-4 py-2.5">
+    <div class="flex items-center gap-2">
+      <span class="h-2.5 w-2.5 rounded-full bg-rose-500/80"></span>
+      <span class="h-2.5 w-2.5 rounded-full bg-amber-500/80"></span>
+      <span class="h-2.5 w-2.5 rounded-full bg-emerald-500/80"></span>
+    </div>
+    <div class="truncate px-3 font-mono text-[11px] font-medium text-slate-600 dark:text-slate-400">
+      {headerTitle}
+    </div>
+    <div class="w-11" aria-hidden="true"></div>
+  </div>
+
+  <!-- Media Content -->
+  <div class="relative bg-slate-900 dark:bg-[#0b0b13] aspect-16/10 w-full overflow-hidden">
+    {isVideo ? (
+      <video
+        src={mediaSrc}
+        poster={posterSrc}
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="metadata"
+        class="h-full w-full object-cover"
+      ></video>
+    ) : (
+      <img
+        src={mediaSrc}
+        alt={alt}
+        loading={priority ? "eager" : "lazy"}
+        class="h-full w-full object-cover"
+      />
+    )}
+  </div>
+
+  <!-- Optional Bottom Caption -->
+  {caption && (
+    <div class="border-t border-slate-200 dark:border-slate-800/70 bg-slate-50 dark:bg-[#131320]/90 px-4 py-2 text-center text-xs text-slate-600 dark:text-slate-400">
+      {caption}
+    </div>
+  )}
+</div>
