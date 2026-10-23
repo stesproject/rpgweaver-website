@@ -67,7 +67,7 @@ const featureColumns = [
 ---
 
 <header class="sticky top-3 z-50 px-3 sm:px-6 pt-2">
-  <div class="relative mx-auto flex h-13 max-w-4xl items-center justify-between rounded-full border border-[#101b17]/15 dark:border-teal-400/20 bg-[#faf9f4]/90 dark:bg-[#091512]/90 px-3 sm:px-4 shadow-xl shadow-teal-950/5 dark:shadow-black/50 backdrop-blur-xl transition-colors">
+  <div id="navbar-pill-container" class="relative mx-auto flex h-13 max-w-4xl items-center justify-between rounded-full border border-[#101b17]/15 dark:border-teal-400/20 bg-[#faf9f4]/90 dark:bg-[#091512]/90 px-3 sm:px-4 shadow-xl shadow-teal-950/5 dark:shadow-black/50 backdrop-blur-xl transition-colors">
     <!-- Brand -->
     <a href={lang === "it" ? "/it" : "/"} class="flex items-center gap-2.5 group pl-1">
       <div class="relative flex h-8 w-8 items-center justify-center rounded-full bg-[#0c1a16] ring-1 ring-teal-500/40 overflow-hidden transition-transform group-hover:scale-105">
@@ -93,67 +93,25 @@ const featureColumns = [
         {t("nav.engine")}
       </a>
 
-      <!-- Features Dropdown Trigger Container -->
-      <div class="relative group/features">
-        <a
-          href="#features"
-          id="features-nav-trigger"
-          class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 hover:bg-white dark:hover:bg-teal-500/15 hover:text-teal-700 dark:hover:text-teal-300 transition-colors cursor-pointer"
-          aria-haspopup="true"
-          aria-expanded="false"
+      <!-- Features Dropdown Trigger Button -->
+      <button
+        type="button"
+        id="features-nav-trigger"
+        class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 hover:bg-white dark:hover:bg-teal-500/15 hover:text-teal-700 dark:hover:text-teal-300 transition-colors cursor-pointer select-none"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <span>{t("nav.features")}</span>
+        <svg
+          id="features-dropdown-chevron"
+          class="h-3 w-3 text-teal-600/70 dark:text-teal-300/70 transition-transform duration-200"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
         >
-          <span>{t("nav.features")}</span>
-          <svg class="h-3 w-3 text-teal-600/70 dark:text-teal-300/70 transition-transform duration-200 group-hover/features:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-          </svg>
-        </a>
-
-        <!-- Invisible bridge so cursor moving downward won't leave hover area -->
-        <div
-          id="features-dropdown-menu"
-          class="pointer-events-none opacity-0 translate-y-1 group-hover/features:pointer-events-auto group-hover/features:opacity-100 group-hover/features:translate-y-0 group-focus-within/features:pointer-events-auto group-focus-within/features:opacity-100 group-focus-within/features:translate-y-0 fixed left-1/2 -translate-x-1/2 top-16 pt-2 z-50 w-[920px] max-w-[95vw] transition-all duration-200 ease-out"
-        >
-          <div class="rounded-2xl border border-[#101b17]/15 dark:border-teal-400/25 bg-[#faf9f4]/98 dark:bg-[#071310]/98 p-5 sm:p-6 shadow-2xl shadow-teal-950/25 dark:shadow-black/80 backdrop-blur-2xl">
-            <!-- Header bar inside dropdown -->
-            <div class="flex items-center justify-between border-b border-[#101b17]/10 dark:border-teal-400/15 pb-3 mb-4 text-xs font-mono">
-              <div class="flex items-center gap-2 font-bold uppercase tracking-wider text-teal-900 dark:text-teal-200">
-                <span class="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>{t("nav.features")} // {lang === "it" ? "22 Funzioni Tutto Incluso" : "22 Core Built-In Features"}</span>
-              </div>
-              <a
-                href="#features"
-                class="feature-jump-link text-[11px] font-semibold text-teal-700 dark:text-teal-300 hover:underline"
-              >
-                {lang === "it" ? "Tutte le funzioni →" : "View all features →"}
-              </a>
-            </div>
-
-            <!-- 4 Responsive Category Columns -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 text-left">
-              {featureColumns.map((col) => (
-                <div class="space-y-2">
-                  <div class:list={["font-mono text-[10px] font-bold uppercase tracking-wider border-b pb-1.5", col.accent]}>
-                    {col.colTitle}
-                  </div>
-                  <ul class="space-y-0.5">
-                    {col.features.map((feat) => (
-                      <li>
-                        <a
-                          href={`#feat-${feat.key}`}
-                          class="feature-jump-link group/item flex items-start gap-1.5 rounded-lg px-2 py-1.5 text-[11px] leading-snug transition-colors text-[#22332d] dark:text-teal-100/80 hover:bg-teal-500/10 dark:hover:bg-teal-400/10 hover:text-teal-800 dark:hover:text-teal-200"
-                        >
-                          <span class:list={["mt-1 h-1.5 w-1.5 rounded-full shrink-0 transition-transform group-hover/item:scale-125", col.pip]}></span>
-                          <span class="line-clamp-2">{feat.title}</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+        </svg>
+      </button>
 
       <a
         href="#no-plugins"
@@ -223,6 +181,57 @@ const featureColumns = [
         </svg>
       </a>
     </div>
+
+    <!-- Features Dropdown Overlay Menu (Positioned relative to navbar-pill-container) -->
+    <div
+      id="features-dropdown-menu"
+      class="pointer-events-none opacity-0 translate-y-2 invisible absolute top-full left-1/2 -translate-x-1/2 mt-2.5 z-50 w-[920px] max-w-[95vw] transition-all duration-200 ease-out"
+      role="menu"
+      aria-orientation="vertical"
+    >
+      <!-- Invisible bridge element covering any gap between the navbar pill and this menu -->
+      <div class="absolute -top-3 left-0 right-0 h-3 bg-transparent"></div>
+
+      <div class="rounded-2xl border border-[#101b17]/15 dark:border-teal-400/25 bg-[#faf9f4]/98 dark:bg-[#071310]/98 p-5 sm:p-6 shadow-2xl shadow-teal-950/25 dark:shadow-black/80 backdrop-blur-2xl">
+        <!-- Header bar inside dropdown -->
+        <div class="flex items-center justify-between border-b border-[#101b17]/10 dark:border-teal-400/15 pb-3 mb-4 text-xs font-mono">
+          <div class="flex items-center gap-2 font-bold uppercase tracking-wider text-teal-900 dark:text-teal-200">
+            <span class="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>{t("nav.features")} // {lang === "it" ? "22 Funzioni Tutto Incluso" : "22 Core Built-In Features"}</span>
+          </div>
+          <a
+            href="#features"
+            class="feature-jump-link text-[11px] font-semibold text-teal-700 dark:text-teal-300 hover:underline"
+          >
+            {lang === "it" ? "Tutte le funzioni →" : "View all features →"}
+          </a>
+        </div>
+
+        <!-- 4 Responsive Category Columns -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 text-left">
+          {featureColumns.map((col) => (
+            <div class="space-y-2">
+              <div class:list={["font-mono text-[10px] font-bold uppercase tracking-wider border-b pb-1.5", col.accent]}>
+                {col.colTitle}
+              </div>
+              <ul class="space-y-0.5">
+                {col.features.map((feat) => (
+                  <li>
+                    <a
+                      href={`#feat-${feat.key}`}
+                      class="feature-jump-link group/item flex items-start gap-1.5 rounded-lg px-2 py-1.5 text-[11px] leading-snug transition-colors text-[#22332d] dark:text-teal-100/80 hover:bg-teal-500/10 dark:hover:bg-teal-400/10 hover:text-teal-800 dark:hover:text-teal-200"
+                    >
+                      <span class:list={["mt-1 h-1.5 w-1.5 rounded-full shrink-0 transition-transform group-hover/item:scale-125", col.pip]}></span>
+                      <span class="line-clamp-2">{feat.title}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -244,21 +253,86 @@ const featureColumns = [
     });
   });
 
-  // Feature dropdown jump links: close menu and highlight targeted card
-  const jumpLinks = document.querySelectorAll<HTMLAnchorElement>(".feature-jump-link");
+  // Robust features dropdown menu controller
+  const triggerBtn = document.getElementById("features-nav-trigger");
+  const chevronIcon = document.getElementById("features-dropdown-chevron");
   const dropdownMenu = document.getElementById("features-dropdown-menu");
+  const navContainer = document.getElementById("navbar-pill-container");
+
+  let closeTimer: ReturnType<typeof setTimeout> | null = null;
+
+  function openDropdown() {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+    if (!dropdownMenu) return;
+    dropdownMenu.classList.remove("pointer-events-none", "opacity-0", "translate-y-2", "invisible");
+    dropdownMenu.classList.add("pointer-events-auto", "opacity-100", "translate-y-0", "visible");
+    triggerBtn?.setAttribute("aria-expanded", "true");
+    chevronIcon?.classList.add("rotate-180");
+  }
+
+  function scheduleCloseDropdown(delay = 250) {
+    if (closeTimer) clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => {
+      closeDropdown();
+    }, delay);
+  }
+
+  function closeDropdown() {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+    if (!dropdownMenu) return;
+    dropdownMenu.classList.remove("pointer-events-auto", "opacity-100", "translate-y-0", "visible");
+    dropdownMenu.classList.add("pointer-events-none", "opacity-0", "translate-y-2", "invisible");
+    triggerBtn?.setAttribute("aria-expanded", "false");
+    chevronIcon?.classList.remove("rotate-180");
+  }
+
+  // Hover events on trigger and menu with grace delay
+  triggerBtn?.addEventListener("mouseenter", openDropdown);
+  triggerBtn?.addEventListener("mouseleave", () => scheduleCloseDropdown(250));
+  dropdownMenu?.addEventListener("mouseenter", openDropdown);
+  dropdownMenu?.addEventListener("mouseleave", () => scheduleCloseDropdown(250));
+
+  // Click on trigger toggles
+  triggerBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const isOpen = triggerBtn.getAttribute("aria-expanded") === "true";
+    if (isOpen) {
+      closeDropdown();
+    } else {
+      openDropdown();
+    }
+  });
+
+  // Close on outside click
+  document.addEventListener("click", (e) => {
+    const target = e.target as Node;
+    if (navContainer && !navContainer.contains(target)) {
+      closeDropdown();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeDropdown();
+    }
+  });
+
+  // Feature dropdown jump links: close menu immediately and highlight targeted card
+  const jumpLinks = document.querySelectorAll<HTMLAnchorElement>(".feature-jump-link");
 
   jumpLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       const href = link.getAttribute("href");
       if (href && href.startsWith("#feat-")) {
-        // Hide dropdown immediately on click
-        if (dropdownMenu) {
-          dropdownMenu.classList.add("hidden");
-          setTimeout(() => {
-            dropdownMenu.classList.remove("hidden");
-          }, 600);
-        }
+        closeDropdown();
 
         // Highlight targeted feature card
         const targetId = href.substring(1);
