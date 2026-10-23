@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "RPG Weaver — The Built-In 2D RPG Engine | Zero Plugins Needed",
-    "description": "An engine that sits between the simplicity of RPG Maker and the power of a professional-grade engine. Pixel movement, event AI, camera control, HUD health bars, infinite layers, and Pixi.js performance—100% built-in with zero external plugins."
+    "title": "RPG Weaver - The Built-In 2D RPG Engine | Zero Plugins Needed",
+    "description": "An engine that sits between the simplicity of RPG Maker and the power of a professional-grade engine. Pixel movement, event AI, camera control, HUD health bars, infinite layers, and Pixi.js performance, 100% built-in with zero external plugins."
   },
   "brand": {
     "name": "RPG Weaver",
@@ -30,13 +30,13 @@
     "eyebrow": "100% Browser-Native 2D RPG Maker • Powered by Pixi.js",
     "titleLine1": "The Simplicity of RPG Maker.",
     "titleLine2": "The Power of a Pro Engine.",
-    "subtitle": "Stop hunting for dozens of broken third-party scripts. RPG Weaver builds everything you wish RPG Maker had directly into the core engine—from pixel movement, event-to-event collision triggers, and reusable event templates to HUD picture cropping, infinite map layers, and 60 FPS Pixi.js rendering.",
+    "subtitle": "Stop hunting for dozens of broken third-party scripts. RPG Weaver builds everything you wish RPG Maker had directly into the core engine: pixel movement, event-to-event collision triggers, reusable event templates, HUD picture cropping, infinite map layers, and 60 FPS Pixi.js rendering.",
     "primaryCta": "Launch RPG Weaver Now",
     "secondaryCta": "Explore Built-In Features",
     "noInstallNote": "Runs instantly in your browser • Free default assets included • No account required",
-    "windowTitle": "RPG Weaver — Chronicles of Aetheria (Live Workspace)",
+    "windowTitle": "RPG Weaver - Chronicles of Aetheria (Live Workspace)",
     "screenshotAlt": "RPG Weaver full editor workspace showing Oakwood Village map, stacked and multi-area events, and the visual Event Editor",
-    "screenshotCaption": "Real workspace from RPG Weaver: visual map canvas, multi-tile & stacked events, templates, and color-coded event commands—all out of the box.",
+    "screenshotCaption": "Real workspace from RPG Weaver: visual map canvas, multi-tile & stacked events, templates, and color-coded event commands, all out of the box.",
     "videoTabLabel": "Watch Interactive Workflow (Video)",
     "imageTabLabel": "High-Res Editor View (Screenshot)",
     "stats": {
@@ -64,7 +64,7 @@
     "newWaySubtitle": "Visual dialogs, live previews, and rock-solid native commands",
     "newPoint1": "Every essential mechanic is a first-class Event Command or Database toggle",
     "newPoint2": "Interactive visual previews for Show Picture placement, Show Fog motion, and spritesheet slicing",
-    "newPoint3": "Infinite reorderable map layers, customizable tile sizes (16px–64px), and custom viewport resolutions",
+    "newPoint3": "Infinite reorderable map layers, customizable tile sizes (16px-64px), and custom viewport resolutions",
     "newPoint4": "Native Event Templates, Multi-Area triggers, Stacked Events, and one-click DevTools console debugging",
     "builtInBadge": "100% Built-In",
     "cards": {
@@ -76,12 +76,12 @@
       "cameraAndTransfer": {
         "tag": "Replaces Camera & Transfer Scripts",
         "title": "Dynamic Camera & Cross-Map Events",
-        "desc": "Pan the camera smoothly to any event or coordinate, and transfer not just the player—but any NPC or map event—across maps."
+        "desc": "Pan the camera smoothly to any event or coordinate, and transfer not just the player, but any NPC or map event, across maps."
       },
       "hudAndPictures": {
         "tag": "Replaces HUD & Message Plugins",
         "title": "HUD Health Bars, Previews & Fogs",
-        "desc": "Crop pictures 0–100% by variable for instant HP/MP bars, drag pictures visually in a live viewport preview, and layer animated map fogs."
+        "desc": "Crop pictures 0-100% by variable for instant HP/MP bars, drag pictures visually in a live viewport preview, and layer animated map fogs."
       },
       "templatesAndState": {
         "tag": "Replaces Event Spawner Plugins",
@@ -103,7 +103,7 @@
   "sections": {
     "events": {
       "badge": "Next-Gen Event Engine & AI",
-      "title": "Events That Actually Do What You Want—Out of the Box",
+      "title": "Events That Actually Do What You Want: Out of the Box",
       "subtitle": "Ranked from the most requested RPG Maker upgrades: sub-tile pixel movement, smart pursuit routes, event-to-event collision checks, cross-map NPC transfers, cinematic camera targets, templates, multi-area bounds, stacked events, and persistent positions."
     },
     "visuals": {
@@ -123,7 +123,7 @@
     },
     "system": {
       "badge": "Engine Customization & Pixi.js Performance",
-      "title": "Your Inputs, Your Grid Size, Your Resolution—At 60 FPS",
+      "title": "Your Inputs, Your Grid Size, Your Resolution: At 60 FPS",
       "subtitle": "Tailor keybindings, tile dimensions, and camera viewport sizes in seconds, all rendered by a hardware-accelerated Pixi.js WebGL/WebGPU runtime."
     }
   },
@@ -161,7 +161,7 @@
     "eventTransfer": {
       "badge": "Transfer Command → Subject to Transfer",
       "replaces": "Replaces Cross-Map NPC Transfer Plugins",
-      "title": "Transfer Any Event Across Maps—Not Just the Player",
+      "title": "Transfer Any Event Across Maps: Not Just the Player",
       "description": "The Transfer event command isn't limited to the player anymore. Choose 'Subject to Transfer' to relocate the Player, This Event, or any Map Event to another map or coordinate.",
       "b1": "Subject to Transfer dropdown supports Player, This Event, or any event on the current map",
       "b2": "Designate destination coordinates directly on a visual map preview or via Game Variables",
@@ -222,11 +222,11 @@
       "badge": "Event Command → Crop Picture...",
       "replaces": "Replaces Custom HUD & Health Bar Plugins",
       "title": "Easily Use Pictures as Dynamic Health & Mana Bars",
-      "description": "Building a custom HUD takes seconds: display a bar graphic with Show Picture, then use Crop Picture... to bind its visible width or height percentage (0–100%) to any Game Variable.",
+      "description": "Building a custom HUD takes seconds: display a bar graphic with Show Picture, then use Crop Picture... to bind its visible width or height percentage (0-100%) to any Game Variable.",
       "b1": "Bind horizontal Crop Width (%) and/or vertical Crop Height (%) directly to Game Variables",
       "b2": "Values from 0 to 100 dynamically clip the picture without stretching or distorting pixel art",
       "b3": "Perfect for player HP/MP bars, boss shields, stamina meters, and cooldown gauges",
-      "caption": "Crop Picture dialog binding Picture #1's width and height percentages (0–100%) to Player HP % and Boss Shield % variables."
+      "caption": "Crop Picture dialog binding Picture #1's width and height percentages (0-100%) to Player HP % and Boss Shield % variables."
     },
     "picturePreview": {
       "badge": "Event Command → Show Picture...",
@@ -274,7 +274,7 @@
       "title": "Full Support for Autotiles, Animated Tiles & Speed Control",
       "description": "Import any autotile sheet and configure how RPG Weaver slices and animates it. Choose between Full 47-tile or Edge 16-tile autotile formats, enable animation, set frame count, and dial in exact FPS speed.",
       "b1": "Switch between Full Autotile (47 tiles, corners + edges), Edge Autotile (16 tiles), or Single Tile",
-      "b2": "Toggle 'Animated Tile', specify Animation Frames, and tune Animation Speed (1–30 fps)",
+      "b2": "Toggle 'Animated Tile', specify Animation Frames, and tune Animation Speed (1-30 fps)",
       "b3": "Interactive slicing preview and live animated tile preview right inside the Resource Manager",
       "caption": "Resource Manager open on Autotiles showing Full 47-tile format, 3 animation frames at 4 FPS, and live animated water preview."
     },
@@ -292,7 +292,7 @@
       "badge": "Instant Search & Filter Across Every Modal",
       "replaces": "Replaces Editor Search & Command Finder Addons",
       "title": "Filterable Lists Everywhere in the Editor",
-      "description": "Whether you're searching for an Event Command across tabs, filtering 200 events on a huge map, looking up a Map in the tree, or finding a Switch, Variable, or Database entry—every list filters as you type.",
+      "description": "Whether you're searching for an Event Command across tabs, filtering 200 events on a huge map, looking up a Map in the tree, or finding a Switch, Variable, or Database entry, every list filters as you type.",
       "b1": "Insert Event Command modal filters across all command categories in real time",
       "b2": "Sidebar instant search bars for both Map Events/Templates and the Map Tree",
       "b3": "Built-in search filtering inside Database tabs, Switches Manager, Variables Manager, and Resource Manager",
@@ -342,7 +342,7 @@
       "badge": "Hardware-Accelerated Pixi.js Runtime",
       "replaces": "Built for Smooth 60 FPS Web & Desktop Play",
       "title": "Great Performance, Powered by Pixi.js",
-      "description": "Under the hood, RPG Weaver's playtest and exported games run on Pixi.js—delivering hardware-accelerated WebGL rendering, silky-smooth 60 FPS frame pacing, multi-layer fogs, and instant in-browser playtesting.",
+      "description": "Under the hood, RPG Weaver's playtest and exported games run on Pixi.js, delivering hardware-accelerated WebGL rendering, silky-smooth 60 FPS frame pacing, multi-layer fogs, and instant in-browser playtesting.",
       "b1": "Hardware-accelerated Pixi.js rendering pipeline with live FPS counter badge in Playtest mode",
       "b2": "Handles unlimited map layers, animated autotiles, additive fogs, and dozens of active events at 60 FPS",
       "b3": "Instant zero-build playtesting from the Title Screen or directly from the Current Map",
@@ -351,13 +351,13 @@
   },
   "cta": {
     "badge": "Ready to Build Without Plugin Headaches?",
-    "title": "Start Your Project in Seconds—Right in Your Browser.",
+    "title": "Start Your Project in Seconds, Right in Your Browser.",
     "subtitle": "Launch RPG Weaver, click 'Start project with default assets', and experience a 2D RPG engine where every feature you need is already built in.",
     "primaryBtn": "Open RPG Weaver Web App",
     "secondaryBtn": "Review Built-In Features"
   },
   "footer": {
-    "description": "An engine that sits between the simplicity of RPG Maker and the complexity of a professional-grade engine—with zero external plugins needed.",
+    "description": "An engine that sits between the simplicity of RPG Maker and the complexity of a professional-grade engine, with zero external plugins needed.",
     "launchApp": "Launch Web App (rpg-weaver.web.app)",
     "copyright": "© 2026 RPG Weaver. Built for RPG creators everywhere."
   }

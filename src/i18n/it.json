@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "RPG Weaver — Il Motore RPG 2D Tutto Incluso | Zero Plugin Esterni",
+    "title": "RPG Weaver - Il Motore RPG 2D Tutto Incluso | Zero Plugin Esterni",
     "description": "Un motore che unisce la semplicità di RPG Maker alla potenza di un engine professionale. Movimento pixel, IA degli eventi, controllo telecamera, barre salute HUD, livelli infiniti e prestazioni Pixi.js: tutto integrato nativamente senza bisogno di plugin esterni."
   },
   "brand": {
@@ -34,9 +34,9 @@
     "primaryCta": "Avvia RPG Weaver Ora",
     "secondaryCta": "Scopri le Funzioni Integrate",
     "noInstallNote": "Funziona istantaneamente nel browser • Asset predefiniti inclusi • Nessun account richiesto",
-    "windowTitle": "RPG Weaver — Chronicles of Aetheria (Workspace Live)",
+    "windowTitle": "RPG Weaver - Chronicles of Aetheria (Workspace Live)",
     "screenshotAlt": "Area di lavoro completa di RPG Weaver con la mappa Oakwood Village, eventi impilati e multi-area, e l'Event Editor visuale",
-    "screenshotCaption": "Area di lavoro reale di RPG Weaver: mappa visuale, eventi multi-cella e impilati, template e comandi evento codificati a colori—tutto pronto all'uso.",
+    "screenshotCaption": "Area di lavoro reale di RPG Weaver: mappa visuale, eventi multi-cella e impilati, template e comandi evento codificati a colori, tutto pronto all'uso.",
     "videoTabLabel": "Guarda il Flusso Interattivo (Video)",
     "imageTabLabel": "Vista Editor ad Alta Risoluzione (Screenshot)",
     "stats": {
@@ -64,7 +64,7 @@
     "newWaySubtitle": "Finestre visuali, anteprime in tempo reale e comandi nativi solidi",
     "newPoint1": "Ogni meccanica essenziale è un Comando Evento di prima classe o un'opzione del Database",
     "newPoint2": "Anteprime visuali interattive per il posizionamento di Show Picture, il movimento di Show Fog e il taglio spritesheet",
-    "newPoint3": "Livelli mappa infiniti e riordinabili, dimensioni griglia personalizzabili (16px–64px) e risoluzioni viewport su misura",
+    "newPoint3": "Livelli mappa infiniti e riordinabili, dimensioni griglia personalizzabili (16px-64px) e risoluzioni viewport su misura",
     "newPoint4": "Template Eventi nativi, aree multi-cella, eventi impilati e debug in console con un solo clic",
     "builtInBadge": "100% Integrato",
     "cards": {
@@ -103,7 +103,7 @@
   "sections": {
     "events": {
       "badge": "Motore Eventi di Nuova Generazione e IA",
-      "title": "Eventi che Fanno Davvero Ciò che Vuoi—Senza Plugin",
+      "title": "Eventi che Fanno Davvero Ciò che Vuoi: Senza Plugin",
       "subtitle": "Ordinati dalle funzioni più richieste dagli utenti RPG Maker: movimento al pixel, percorsi di inseguimento intelligenti, collisioni tra eventi, trasferimento NPC tra mappe, controllo telecamera, template, eventi multi-area, eventi impilati e salvataggio posizione."
     },
     "visuals": {
@@ -123,7 +123,7 @@
     },
     "system": {
       "badge": "Personalizzazione Motore e Prestazioni Pixi.js",
-      "title": "I Tuoi Input, la Tua Griglia, la Tua Risoluzione—A 60 FPS",
+      "title": "I Tuoi Input, la Tua Griglia, la Tua Risoluzione: A 60 FPS",
       "subtitle": "Personalizza comandi da tastiera, dimensioni delle celle e risoluzione della telecamera in pochi secondi, con la fluidità del motore WebGL/WebGPU accelerato via hardware con Pixi.js."
     }
   },
@@ -161,7 +161,7 @@
     "eventTransfer": {
       "badge": "Comando Transfer → Subject to Transfer",
       "replaces": "Sostituisce i Plugin di Trasferimento NPC",
-      "title": "Trasferisci Qualsiasi Evento su Altre Mappe—Non Solo il Giocatore",
+      "title": "Trasferisci Qualsiasi Evento su Altre Mappe: Non Solo il Giocatore",
       "description": "Il comando Transfer non è più limitato al solo giocatore. Usa 'Subject to Transfer' per spostare il Giocatore, Questo Evento o qualsiasi Evento della mappa verso un'altra mappa o coordinata.",
       "b1": "Il menu Subject to Transfer supporta Player, This Event o qualsiasi evento presente sulla mappa",
       "b2": "Imposta le coordinate di destinazione direttamente sull'anteprima visuale della mappa o tramite Variabili",
@@ -222,11 +222,11 @@
       "badge": "Comando Evento → Crop Picture...",
       "replaces": "Sostituisce i Plugin di Barre Salute e HUD",
       "title": "Usa Facilmente le Immagini come Barre della Vita (Crop Picture)",
-      "description": "Creare un HUD personalizzato richiede pochi secondi: mostra la grafica della barra con Show Picture e usa Crop Picture... per collegare la percentuale visibile di larghezza o altezza (0–100%) a una Variabile.",
+      "description": "Creare un HUD personalizzato richiede pochi secondi: mostra la grafica della barra con Show Picture e usa Crop Picture... per collegare la percentuale visibile di larghezza o altezza (0-100%) a una Variabile.",
       "b1": "Collega Crop Width (%) orizzontale e/o Crop Height (%) verticale direttamente alle Variabili di gioco",
       "b2": "I valori da 0 a 100 ritagliano dinamicamente l'immagine senza deformare o stirare la pixel art",
       "b3": "Ideale per barre HP/MP del giocatore, scudi dei boss, indicatori di stamina e barre di caricamento",
-      "caption": "Finestra Crop Picture che collega larghezza e altezza (0–100%) dell'Immagine #1 alle variabili Player HP % e Boss Shield %."
+      "caption": "Finestra Crop Picture che collega larghezza e altezza (0-100%) dell'Immagine #1 alle variabili Player HP % e Boss Shield %."
     },
     "picturePreview": {
       "badge": "Comando Evento → Show Picture...",
@@ -274,7 +274,7 @@
       "title": "Supporto Completo per Autotile, Tile Animati e Velocità FPS",
       "description": "Importa qualsiasi foglio autotile e decidi esattamente come suddividerlo e animarlo. Scegli tra formato Full Autotile (47 tile) o Edge Autotile (16 tile), attiva l'animazione, imposta il numero di frame e regola gli FPS.",
       "b1": "Passa tra Full Autotile (47 tile, angoli + bordi), Edge Autotile (16 tile) o Single Tile",
-      "b2": "Attiva 'Animated Tile', specifica il numero di Animation Frames e regola Animation Speed (1–30 fps)",
+      "b2": "Attiva 'Animated Tile', specifica il numero di Animation Frames e regola Animation Speed (1-30 fps)",
       "b3": "Anteprima interattiva della griglia di taglio e anteprima live del tile animato direttamente nel Resource Manager",
       "caption": "Resource Manager aperto su Autotiles con formato Full 47-tile, 3 frame di animazione a 4 FPS e anteprima acqua animata."
     },
@@ -292,7 +292,7 @@
       "badge": "Ricerca e Filtro Istantaneo Ovunque",
       "replaces": "Sostituisce Addon di Ricerca Comandi ed Eventi",
       "title": "Liste Filtrabili in Tempo Reale in Tutto l'Editor",
-      "description": "Che tu stia cercando un Comando Evento tra le varie schede, filtrando centinaia di eventi sulla mappa, cercando una Mappa nell'albero o selezionando Switch, Variabili e voci del Database—ogni lista si filtra mentre scrivi.",
+      "description": "Che tu stia cercando un Comando Evento tra le varie schede, filtrando centinaia di eventi sulla mappa, cercando una Mappa nell'albero o selezionando Switch, Variabili e voci del Database, ogni lista si filtra mentre scrivi.",
       "b1": "La finestra Insert Event Command filtra istantaneamente i comandi di tutte le schede",
       "b2": "Barre di ricerca rapida nella barra laterale sia per gli Eventi/Template sia per il Map Tree",
       "b3": "Filtro integrato in tutte le schede del Database, Switches Manager, Variables Manager e Resource Manager",
@@ -342,7 +342,7 @@
       "badge": "Motore di Rendering Accelerato Pixi.js",
       "replaces": "Progettato per 60 FPS Costanti su Web e Desktop",
       "title": "Prestazioni Straordinarie, Alimentate da Pixi.js",
-      "description": "Sotto il cofano, il playtest e i giochi esportati da RPG Weaver girano su Pixi.js—garantendo rendering WebGL accelerato via hardware, 60 FPS granitici, nebbie multi-livello e playtest istantaneo nel browser.",
+      "description": "Sotto il cofano, il playtest e i giochi esportati da RPG Weaver girano su Pixi.js, garantendo rendering WebGL accelerato via hardware, 60 FPS granitici, nebbie multi-livello e playtest istantaneo nel browser.",
       "b1": "Pipeline di rendering Pixi.js accelerata via hardware con indicatore FPS live durante il Playtest",
       "b2": "Gestisce livelli mappa infiniti, autotile animati, nebbie additive e decine di eventi attivi a 60 FPS",
       "b3": "Playtest istantaneo senza tempi di compilazione dalla schermata del titolo o direttamente dalla mappa corrente",
@@ -351,13 +351,13 @@
   },
   "cta": {
     "badge": "Pronto a Creare Senza il Mal di Testa dei Plugin?",
-    "title": "Inizia il Tuo Progetto in Pochi Secondi—Direttamente nel Browser.",
+    "title": "Inizia il Tuo Progetto in Pochi Secondi, Direttamente nel Browser.",
     "subtitle": "Apri RPG Weaver, clicca su 'Start project with default assets' e prova un motore RPG 2D in cui ogni funzione che desideri è già integrata.",
     "primaryBtn": "Apri la Web App RPG Weaver",
     "secondaryBtn": "Rivedi le Funzioni Integrate"
   },
   "footer": {
-    "description": "Un motore che unisce la semplicità di RPG Maker alla potenza di un engine professionale—senza bisogno di plugin esterni.",
+    "description": "Un motore che unisce la semplicità di RPG Maker alla potenza di un engine professionale, senza bisogno di plugin esterni.",
     "launchApp": "Avvia Web App (rpg-weaver.web.app)",
     "copyright": "© 2026 RPG Weaver. Creato per gli sviluppatori di giochi di ruolo."
   }

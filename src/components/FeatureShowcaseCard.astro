@@ -2,6 +2,7 @@
 import AppWindowFrame from "./AppWindowFrame.astro";
 
 interface Props {
+  id?: string;
   badge: string;
   replacesPlugin?: string;
   title: string;
@@ -16,6 +17,7 @@ interface Props {
 }
 
 const {
+  id,
   badge,
   replacesPlugin,
   title,
@@ -31,10 +33,11 @@ const {
 ---
 
 <article
+  id={id}
   data-feature-card
   data-feature-category={category}
   class:list={[
-    "weaver-card corner-ticks rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-lg shadow-teal-950/5 dark:shadow-black/40",
+    "weaver-card corner-ticks scroll-mt-24 rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-lg shadow-teal-950/5 dark:shadow-black/40 transition-all duration-300",
     featured ? "lg:col-span-2" : "col-span-1"
   ]}
 >

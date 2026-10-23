@@ -342,6 +342,7 @@ const workflowFeatures: FeatureDef[] = [
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {systemFeatures.map((feat) => (
               <FeatureShowcaseCard
+                id={`feat-${feat.key}`}
                 badge={t(`features.${feat.key}.badge`)}
                 replacesPlugin={t(`features.${feat.key}.replaces`)}
                 title={t(`features.${feat.key}.title`)}
@@ -374,6 +375,7 @@ const workflowFeatures: FeatureDef[] = [
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {mappingFeatures.map((feat) => (
               <FeatureShowcaseCard
+                id={`feat-${feat.key}`}
                 badge={t(`features.${feat.key}.badge`)}
                 replacesPlugin={t(`features.${feat.key}.replaces`)}
                 title={t(`features.${feat.key}.title`)}
@@ -413,6 +415,7 @@ const workflowFeatures: FeatureDef[] = [
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {eventFeatures.map((feat) => (
               <FeatureShowcaseCard
+                id={`feat-${feat.key}`}
                 badge={t(`features.${feat.key}.badge`)}
                 replacesPlugin={t(`features.${feat.key}.replaces`)}
                 title={t(`features.${feat.key}.title`)}
@@ -445,6 +448,7 @@ const workflowFeatures: FeatureDef[] = [
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {visualFeatures.map((feat) => (
               <FeatureShowcaseCard
+                id={`feat-${feat.key}`}
                 badge={t(`features.${feat.key}.badge`)}
                 replacesPlugin={t(`features.${feat.key}.replaces`)}
                 title={t(`features.${feat.key}.title`)}
@@ -477,6 +481,7 @@ const workflowFeatures: FeatureDef[] = [
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {workflowFeatures.map((feat) => (
               <FeatureShowcaseCard
+                id={`feat-${feat.key}`}
                 badge={t(`features.${feat.key}.badge`)}
                 replacesPlugin={t(`features.${feat.key}.replaces`)}
                 title={t(`features.${feat.key}.title`)}
