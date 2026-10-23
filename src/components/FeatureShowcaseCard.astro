@@ -11,7 +11,8 @@ interface Props {
   posterSrc?: string;
   mediaCaption: string;
   isVideo?: boolean;
-  reverse?: boolean;
+  featured?: boolean;
+  category?: string;
 }
 
 const {
@@ -24,62 +25,112 @@ const {
   posterSrc,
   mediaCaption,
   isVideo = false,
-  reverse = false
+  featured = false,
+  category = "all"
 } = Astro.props;
 ---
 
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center rounded-3xl border border-slate-200/90 dark:border-slate-800/80 bg-gradient-to-b from-white to-slate-50/90 dark:from-[#12121f]/90 dark:to-[#0d0d17]/90 p-6 sm:p-8 lg:p-10 shadow-xl shadow-slate-900/5 dark:shadow-black/45 ring-1 ring-slate-900/5 dark:ring-white/5">
-  <!-- Text Column -->
-  <div class:list={["lg:col-span-5 space-y-5", reverse ? "lg:order-2" : "lg:order-1"]}>
-    <div class="flex flex-wrap items-center gap-2">
-      <span class="inline-flex items-center gap-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-violet-700 dark:text-violet-300">
-        {badge}
-      </span>
-      {replacesPlugin && (
-        <span class="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">
-          <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-          </svg>
-          <span>{replacesPlugin}</span>
-        </span>
-      )}
+<article
+  data-feature-card
+  data-feature-category={category}
+  class:list={[
+    "weaver-card corner-ticks rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-lg shadow-teal-950/5 dark:shadow-black/40",
+    featured ? "lg:col-span-2" : "col-span-1"
+  ]}
+>
+  {featured ? (
+    <!-- Wide Bento Spotlight Layout (for Flagship Video Features) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center h-full">
+      <div class="lg:col-span-7 order-1 lg:order-2">
+        <AppWindowFrame
+          mediaSrc={mediaSrc}
+          posterSrc={posterSrc}
+          headerTitle={badge}
+          alt={title}
+          caption={mediaCaption}
+          isVideo={isVideo}
+        />
+      </div>
+
+      <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-between space-y-4">
+        <div class="space-y-3">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center rounded-md border border-teal-600/30 dark:border-teal-400/30 bg-teal-600/10 dark:bg-teal-400/10 px-2.5 py-0.5 font-mono text-[11px] font-bold text-teal-800 dark:text-teal-300">
+              {badge}
+            </span>
+            {replacesPlugin && (
+              <span class="inline-flex items-center gap-1 rounded-md border border-amber-600/30 dark:border-amber-400/30 bg-amber-500/10 px-2 py-0.5 font-mono text-[10px] font-semibold text-amber-800 dark:text-amber-300">
+                <span>⚡</span>
+                <span>{replacesPlugin}</span>
+              </span>
+            )}
+          </div>
+
+          <h3 class="font-display text-xl sm:text-2xl font-bold text-[#101b17] dark:text-white leading-snug">
+            {title}
+          </h3>
+
+          <p class="text-xs sm:text-sm text-[#364943] dark:text-teal-100/75 leading-relaxed">
+            {description}
+          </p>
+        </div>
+
+        <ul class="space-y-2 border-t border-[#101b17]/10 dark:border-teal-400/15 pt-3.5">
+          {bullets.map((bullet) => (
+            <li class="flex items-start gap-2 text-xs text-[#22332d] dark:text-teal-50/85">
+              <span class="mt-0.5 font-mono text-[11px] font-bold text-teal-600 dark:text-teal-400 shrink-0">
+                →
+              </span>
+              <span>{bullet}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
+  ) : (
+    <!-- Compact Vertical Architectural Card Layout -->
+    <div class="flex flex-col h-full justify-between space-y-5">
+      <div class="space-y-4">
+        <AppWindowFrame
+          mediaSrc={mediaSrc}
+          posterSrc={posterSrc}
+          headerTitle={badge}
+          alt={title}
+          caption={mediaCaption}
+          isVideo={isVideo}
+        />
 
-    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-snug">
-      {title}
-    </h3>
-
-    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-      {description}
-    </p>
-
-    <ul class="space-y-2.5 pt-1">
-      {bullets.map((bullet) => (
-        <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-          <span class="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-violet-500/15 dark:bg-violet-500/20 text-violet-600 dark:text-violet-400">
-            <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path
-                fill-rule="evenodd"
-                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                clip-rule="evenodd"
-              />
-            </svg>
+        <div class="flex flex-wrap items-center justify-between gap-1.5 pt-1">
+          <span class="inline-flex items-center rounded-md border border-teal-600/25 dark:border-teal-400/25 bg-teal-600/10 dark:bg-teal-400/10 px-2 py-0.5 font-mono text-[10px] font-bold text-teal-800 dark:text-teal-300">
+            {badge}
           </span>
-          <span>{bullet}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
+          {replacesPlugin && (
+            <span class="inline-flex items-center gap-1 rounded-md border border-amber-600/25 dark:border-amber-400/25 bg-amber-500/10 px-2 py-0.5 font-mono text-[10px] font-semibold text-amber-800 dark:text-amber-300">
+              <span>⚡</span>
+              <span>{replacesPlugin}</span>
+            </span>
+          )}
+        </div>
 
-  <!-- Media Column -->
-  <div class:list={["lg:col-span-7", reverse ? "lg:order-1" : "lg:order-2"]}>
-    <AppWindowFrame
-      mediaSrc={mediaSrc}
-      posterSrc={posterSrc}
-      headerTitle={badge}
-      alt={title}
-      caption={mediaCaption}
-      isVideo={isVideo}
-    />
-  </div>
-</div>
+        <h3 class="font-display text-lg sm:text-xl font-bold text-[#101b17] dark:text-white leading-snug">
+          {title}
+        </h3>
+
+        <p class="text-xs sm:text-sm text-[#364943] dark:text-teal-100/75 leading-relaxed">
+          {description}
+        </p>
+      </div>
+
+      <ul class="space-y-1.5 border-t border-[#101b17]/10 dark:border-teal-400/15 pt-3">
+        {bullets.map((bullet) => (
+          <li class="flex items-start gap-2 text-xs text-[#22332d] dark:text-teal-50/85">
+            <span class="mt-0.5 font-mono text-[11px] font-bold text-teal-600 dark:text-teal-400 shrink-0">
+              →
+            </span>
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+</article>

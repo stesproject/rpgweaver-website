@@ -9,17 +9,28 @@
     "logoAlt": "RPG Weaver Logo"
   },
   "nav": {
+    "engine": "Architecture",
+    "features": "22 Features",
     "noPlugins": "Zero Plugins",
     "events": "Event Engine",
     "visuals": "HUD & Visuals",
     "mapping": "Layers & Assets",
     "workflow": "Debug & Search",
     "system": "System & Pixi.js",
-    "launchApp": "Launch Web App",
+    "launchApp": "Open App",
     "switchLangLabel": "Switch website language",
     "toggleThemeLabel": "Toggle light or dark theme",
     "langEn": "EN",
     "langIt": "IT"
+  },
+  "explorer": {
+    "all": "All 22 Upgrades",
+    "catSystem": "Pixi.js, Grid & Layers",
+    "catEvents": "Event AI & Logic",
+    "catVisuals": "HUD, Pictures & Fogs",
+    "catWorkflow": "Search, Inputs & Debug",
+    "zoomHint": "Click media to inspect fullscreen",
+    "closeModal": "Close preview"
   },
   "hero": {
     "eyebrow": "100% Browser-Native 2D RPG Maker • Powered by Pixi.js",

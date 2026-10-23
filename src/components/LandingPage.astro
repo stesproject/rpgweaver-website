@@ -20,15 +20,61 @@ interface FeatureDef {
   mediaSrc: string;
   posterSrc?: string;
   isVideo?: boolean;
+  featured?: boolean;
 }
 
-// Section 1: Next-Gen Event Engine & AI (#1 to #9, ordered most important to least important for RPG Maker users)
+// Reordered Chapter 1A: Total Engine Customization & Pixi.js Performance (#19 to #22)
+const systemFeatures: FeatureDef[] = [
+  {
+    key: "pixiPerformance",
+    mediaSrc: "/media/feat-pixi-performance.mp4",
+    posterSrc: "/media/feat-pixi-performance.png",
+    isVideo: true,
+    featured: true
+  },
+  {
+    key: "customTileSize",
+    mediaSrc: "/media/feat-tile-size.png"
+  },
+  {
+    key: "customViewport",
+    mediaSrc: "/media/feat-viewport-dimensions.png"
+  },
+  {
+    key: "customInputs",
+    mediaSrc: "/media/feat-custom-inputs.png"
+  }
+];
+
+// Reordered Chapter 1B: Infinite Mapping & Pro Asset Pipeline (#14 to #16)
+const mappingFeatures: FeatureDef[] = [
+  {
+    key: "infiniteLayers",
+    mediaSrc: "/media/feat-infinite-layers.mp4",
+    posterSrc: "/media/feat-infinite-layers.png",
+    isVideo: true,
+    featured: true
+  },
+  {
+    key: "autotilesAnimated",
+    mediaSrc: "/media/feat-autotiles-animated.mp4",
+    posterSrc: "/media/feat-autotiles-animated.png",
+    isVideo: true
+  },
+  {
+    key: "characterSlicing",
+    mediaSrc: "/media/feat-character-slicing.png"
+  }
+];
+
+// Chapter 2A: Next-Gen Event Engine & AI (#1 to #9)
 const eventFeatures: FeatureDef[] = [
   {
     key: "pixelMovement",
     mediaSrc: "/media/feat-pixel-movement.mp4",
     posterSrc: "/media/feat-pixel-movement.png",
-    isVideo: true
+    isVideo: true,
+    featured: true
   },
   {
     key: "eventFollow",
@@ -64,8 +110,15 @@ const eventFeatures: FeatureDef[] = [
   }
 ];
 
-// Section 2: Built-In HUD, Visuals & Atmosphere (#10 to #13)
+// Chapter 2B: Built-In HUD, Visuals & Atmosphere (#10 to #13)
 const visualFeatures: FeatureDef[] = [
+  {
+    key: "controlFogs",
+    mediaSrc: "/media/feat-control-fogs.mp4",
+    posterSrc: "/media/feat-control-fogs.png",
+    isVideo: true,
+    featured: true
+  },
   {
     key: "cropPicture",
     mediaSrc: "/media/feat-crop-picture.png"
@@ -77,68 +130,21 @@ const visualFeatures: FeatureDef[] = [
   {
     key: "messageTypewriting",
     mediaSrc: "/media/feat-message-typewriting.png"
-  },
-  {
-    key: "controlFogs",
-    mediaSrc: "/media/feat-control-fogs.mp4",
-    posterSrc: "/media/feat-control-fogs.png",
-    isVideo: true
   }
 ];
 
-// Section 3: Infinite Mapping & Pro Asset Pipeline (#14 to #16)
-const mappingFeatures: FeatureDef[] = [
-  {
-    key: "infiniteLayers",
-    mediaSrc: "/media/feat-infinite-layers.mp4",
-    posterSrc: "/media/feat-infinite-layers.png",
-    isVideo: true
-  },
-  {
-    key: "autotilesAnimated",
-    mediaSrc: "/media/feat-autotiles-animated.mp4",
-    posterSrc: "/media/feat-autotiles-animated.png",
-    isVideo: true
-  },
-  {
-    key: "characterSlicing",
-    mediaSrc: "/media/feat-character-slicing.png"
-  }
-];
-
-// Section 4: Fast Workflow, Instant Filtering & Easy Debug (#17 to #18)
+// Chapter 2C: Fast Workflow, Instant Filtering & Easy Debug (#17 to #18)
 const workflowFeatures: FeatureDef[] = [
   {
     key: "filterableLists",
     mediaSrc: "/media/feat-filterable-lists.mp4",
     posterSrc: "/media/feat-filterable-lists.png",
-    isVideo: true
+    isVideo: true,
+    featured: true
   },
   {
     key: "easyDebug",
     mediaSrc: "/media/feat-easy-debug.png"
-  }
-];
-
-// Section 5: Total Engine Customization & Pixi.js Performance (#19 to #22)
-const systemFeatures: FeatureDef[] = [
-  {
-    key: "customInputs",
-    mediaSrc: "/media/feat-custom-inputs.png"
-  },
-  {
-    key: "customTileSize",
-    mediaSrc: "/media/feat-tile-size.png"
-  },
-  {
-    key: "customViewport",
-    mediaSrc: "/media/feat-viewport-dimensions.png"
-  },
-  {
-    key: "pixiPerformance",
-    mediaSrc: "/media/feat-pixi-performance.mp4",
-    posterSrc: "/media/feat-pixi-performance.png",
-    isVideo: true
   }
 ];
 ---
@@ -146,132 +152,392 @@ const systemFeatures: FeatureDef[] = [
 <BaseLayout lang={lang} title={t("meta.title")} description={t("meta.description")}>
   <Navbar lang={lang} />
 
-  <main>
+  <main class="bg-loom-weave">
     <!-- ==========================================
-         HERO SECTION
+         SPLIT ASYMMETRIC HERO STAGE
          ========================================== -->
-    <section class="relative overflow-hidden pt-12 pb-20 sm:pt-16 sm:pb-28 bg-hero-glow bg-grid-pattern">
+    <section class="relative overflow-hidden pt-8 pb-16 sm:pt-12 sm:pb-24">
+      <!-- Ambient Cyan & Amber Loom Threads Glow -->
+      <div
+        class="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-teal-500/15 dark:bg-teal-400/12 blur-3xl"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="pointer-events-none absolute top-16 right-1/4 h-80 w-80 rounded-full bg-amber-500/15 dark:bg-amber-400/10 blur-3xl"
+        aria-hidden="true"
+      ></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          <!-- Left Column: Brand Crest, Editorial Headline, Actions -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="inline-flex items-center gap-3 rounded-xl border border-teal-600/25 dark:border-teal-400/25 bg-white/80 dark:bg-[#0b1915]/90 p-2 pr-4 shadow-sm">
+              <img
+                src="/rpgweaver-logo.png"
+                alt={t("brand.logoAlt")}
+                width="44"
+                height="44"
+                class="h-11 w-11 object-contain drop-shadow-sm shrink-0"
+              />
+              <div class="font-mono text-[11px] leading-tight">
+                <div class="font-bold uppercase tracking-wider text-teal-700 dark:text-teal-300">
+                  {t("brand.name")} // ENGINE
+                </div>
+                <div class="text-[#4a6058] dark:text-amber-300/85 mt-0.5">
+                  {t("hero.eyebrow")}
+                </div>
+              </div>
+            </div>
+
+            <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-bold tracking-tight text-[#101b17] dark:text-white leading-[1.05]">
+              <span class="block">{t("hero.titleLine1")}</span>
+              <span class="block mt-1.5 bg-gradient-to-r from-teal-600 via-emerald-500 to-amber-500 dark:from-teal-300 dark:via-emerald-300 dark:to-amber-300 bg-clip-text text-transparent">
+                {t("hero.titleLine2")}
+              </span>
+            </h1>
+
+            <p class="text-sm sm:text-base text-[#334740] dark:text-teal-100/80 leading-relaxed">
+              {t("hero.subtitle")}
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center gap-3 pt-1">
+              <a
+                href="https://rpg-weaver.web.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 dark:from-teal-400 dark:via-emerald-400 dark:to-amber-300 px-6 py-3.5 text-sm font-extrabold text-white dark:text-[#06100e] shadow-lg shadow-teal-600/25 dark:shadow-teal-400/20 hover:opacity-95 transition transform hover:-translate-y-0.5"
+              >
+                <span>{t("hero.primaryCta")}</span>
+                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                </svg>
+              </a>
+
+              <a
+                href="#features"
+                class="inline-flex items-center gap-2 rounded-xl border border-[#101b17]/20 dark:border-teal-400/25 bg-white/80 dark:bg-[#0d1d18]/90 px-5 py-3.5 text-sm font-bold text-[#101b17] dark:text-teal-100 hover:border-teal-600 dark:hover:border-teal-400 transition"
+              >
+                <span>{t("hero.secondaryCta")}</span>
+              </a>
+            </div>
+
+            <div class="flex items-center gap-2 font-mono text-[11px] text-[#495f57] dark:text-teal-200/65">
+              <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+              <span>{t("hero.noInstallNote")}</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Workspace Viewport Stage -->
+          <div class="lg:col-span-7">
+            <div class="weaver-card corner-ticks rounded-2xl p-3 sm:p-4 shadow-2xl">
+              <!-- Integrated Stage Mode Bar -->
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3 px-1">
+                <div class="flex items-center gap-2 font-mono text-xs font-bold text-teal-800 dark:text-teal-300">
+                  <span class="inline-block h-2 w-2 rounded-xs bg-amber-500"></span>
+                  <span>WORKSPACE // OAKWOOD_VILLAGE.MAP</span>
+                </div>
+
+                <div class="inline-flex rounded-lg border border-[#101b17]/15 dark:border-teal-400/20 bg-[#eae8df] dark:bg-[#07110e] p-0.5">
+                  <button
+                    type="button"
+                    data-hero-tab="image"
+                    class="hero-media-tab rounded-md px-3 py-1 font-mono text-[11px] font-bold transition cursor-pointer bg-teal-700 dark:bg-teal-400 text-white dark:text-[#06100e]"
+                  >
+                    {t("hero.imageTabLabel")}
+                  </button>
+                  <button
+                    type="button"
+                    data-hero-tab="video"
+                    class="hero-media-tab rounded-md px-3 py-1 font-mono text-[11px] font-bold transition cursor-pointer text-[#3b4f48] dark:text-teal-200/75"
+                  >
+                    {t("hero.videoTabLabel")}
+                  </button>
+                </div>
+              </div>
+
+              <div id="hero-panel-image">
+                <AppWindowFrame
+                  mediaSrc="/media/hero-main.png"
+                  headerTitle={t("hero.windowTitle")}
+                  alt={t("hero.screenshotAlt")}
+                  caption={t("hero.screenshotCaption")}
+                  priority={true}
+                />
+              </div>
+
+              <div id="hero-panel-video" class="hidden">
+                <AppWindowFrame
+                  mediaSrc="/media/hero-demo.mp4"
+                  posterSrc="/media/hero-main.png"
+                  headerTitle={t("hero.windowTitle")}
+                  alt={t("hero.screenshotAlt")}
+                  caption={t("hero.screenshotCaption")}
+                  isVideo={true}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horizontal Engine Telemetry Ledger (Replaces generic 4 boxes) -->
+        <div class="mt-12 rounded-2xl border border-[#101b17]/15 dark:border-teal-400/20 bg-white/85 dark:bg-[#091512]/90 backdrop-blur-md overflow-hidden">
+          <div class="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 divide-x divide-[#101b17]/10 dark:divide-teal-400/15">
+            <div class="p-5 sm:px-7 flex items-center gap-4">
+              <div class="font-display text-3xl sm:text-4xl font-bold text-teal-700 dark:text-teal-300">
+                {t("hero.stats.s1Value")}
+              </div>
+              <div class="font-mono text-xs font-semibold text-[#364943] dark:text-teal-100/80 leading-snug">
+                {t("hero.stats.s1Label")}
+              </div>
+            </div>
+
+            <div class="p-5 sm:px-7 flex items-center gap-4">
+              <div class="font-display text-3xl sm:text-4xl font-bold text-amber-600 dark:text-amber-300">
+                {t("hero.stats.s2Value")}
+              </div>
+              <div class="font-mono text-xs font-semibold text-[#364943] dark:text-teal-100/80 leading-snug">
+                {t("hero.stats.s2Label")}
+              </div>
+            </div>
+
+            <div class="p-5 sm:px-7 flex items-center gap-4">
+              <div class="font-display text-3xl sm:text-4xl font-bold text-emerald-600 dark:text-emerald-300">
+                {t("hero.stats.s3Value")}
+              </div>
+              <div class="font-mono text-xs font-semibold text-[#364943] dark:text-teal-100/80 leading-snug">
+                {t("hero.stats.s3Label")}
+              </div>
+            </div>
+
+            <div class="p-5 sm:px-7 flex items-center gap-4">
+              <div class="font-display text-3xl sm:text-4xl font-bold text-cyan-600 dark:text-cyan-300">
+                {t("hero.stats.s4Value")}
+              </div>
+              <div class="font-mono text-xs font-semibold text-[#364943] dark:text-teal-100/80 leading-snug">
+                {t("hero.stats.s4Label")}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-px w-full loom-thread-line"></div>
+
+    <!-- ==========================================
+         CHAPTER 01 (REORDERED): CORE ENGINE ARCHITECTURE, PIXI.JS & INFINITE MAPPING
+         ========================================== -->
+    <section id="engine" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-24">
+        <!-- 1A: System & Pixi.js 60 FPS Runtime -->
+        <div id="system">
+          <SectionHeader
+            chapterNum="01.A"
+            badge={t("sections.system.badge")}
+            title={t("sections.system.title")}
+            subtitle={t("sections.system.subtitle")}
+            accentColor="teal"
+          />
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {systemFeatures.map((feat) => (
+              <FeatureShowcaseCard
+                badge={t(`features.${feat.key}.badge`)}
+                replacesPlugin={t(`features.${feat.key}.replaces`)}
+                title={t(`features.${feat.key}.title`)}
+                description={t(`features.${feat.key}.description`)}
+                bullets={[
+                  t(`features.${feat.key}.b1`),
+                  t(`features.${feat.key}.b2`),
+                  t(`features.${feat.key}.b3`)
+                ]}
+                mediaSrc={feat.mediaSrc}
+                posterSrc={feat.posterSrc}
+                mediaCaption={t(`features.${feat.key}.caption`)}
+                isVideo={feat.isVideo}
+                featured={feat.featured}
+                category="system"
+              />
+            ))}
+          </div>
+        </div>
+
+        <!-- 1B: Infinite Map Layers & Spritesheet Slicing -->
+        <div id="mapping">
+          <SectionHeader
+            chapterNum="01.B"
+            badge={t("sections.mapping.badge")}
+            title={t("sections.mapping.title")}
+            subtitle={t("sections.mapping.subtitle")}
+            accentColor="emerald"
+          />
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {mappingFeatures.map((feat) => (
+              <FeatureShowcaseCard
+                badge={t(`features.${feat.key}.badge`)}
+                replacesPlugin={t(`features.${feat.key}.replaces`)}
+                title={t(`features.${feat.key}.title`)}
+                description={t(`features.${feat.key}.description`)}
+                bullets={[
+                  t(`features.${feat.key}.b1`),
+                  t(`features.${feat.key}.b2`),
+                  t(`features.${feat.key}.b3`)
+                ]}
+                mediaSrc={feat.mediaSrc}
+                posterSrc={feat.posterSrc}
+                mediaCaption={t(`features.${feat.key}.caption`)}
+                isVideo={feat.isVideo}
+                featured={feat.featured}
+                category="mapping"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 02: INTERACTIVE FEATURE BENTO EXPLORER (EVENTS, HUD & WORKFLOW)
+         ========================================== -->
+    <section id="features" class="py-20 sm:py-28 border-t border-[#101b17]/12 dark:border-teal-400/15 bg-[#eceae0]/50 dark:bg-[#07100d]">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-4xl text-center">
-          <div class="inline-flex items-center gap-2 rounded-full border border-violet-500/35 bg-violet-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-violet-700 dark:text-violet-300 mb-6 shadow-xs">
-            <span class="h-2 w-2 rounded-full bg-violet-500 animate-pulse"></span>
-            <span>{t("hero.eyebrow")}</span>
-          </div>
-
-          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.08]">
-            <span class="block">{t("hero.titleLine1")}</span>
-            <span class="block mt-1 bg-gradient-to-r from-violet-600 via-purple-500 to-indigo-400 bg-clip-text text-transparent">
-              {t("hero.titleLine2")}
-            </span>
-          </h1>
-
-          <p class="mt-6 text-base sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            {t("hero.subtitle")}
-          </p>
-
-          <!-- CTA Buttons -->
-          <div class="mt-9 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="https://rpg-weaver.web.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 px-7 py-4 text-sm sm:text-base font-extrabold text-white shadow-xl shadow-violet-600/30 hover:from-violet-500 hover:via-purple-500 hover:to-indigo-500 transition transform hover:-translate-y-0.5"
-            >
-              <span>{t("hero.primaryCta")}</span>
-              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
-              </svg>
-            </a>
-
-            <a
-              href="#events"
-              class="inline-flex items-center gap-2 rounded-2xl border border-slate-300 dark:border-slate-700/80 bg-white/90 dark:bg-[#141424]/90 px-6 py-4 text-sm sm:text-base font-bold text-slate-800 dark:text-slate-200 hover:border-violet-500/50 transition"
-            >
-              <span>{t("hero.secondaryCta")}</span>
-            </a>
-          </div>
-
-          <p class="mt-4 text-xs font-medium text-slate-500 dark:text-slate-400">
-            {t("hero.noInstallNote")}
-          </p>
-        </div>
-
-        <!-- Hero Media Switcher (Screenshot + Live Video) -->
-        <div class="mt-12 mx-auto max-w-6xl">
-          <div class="flex items-center justify-center gap-2 mb-4">
+        <!-- Quick Category Filter / Jump Bar -->
+        <div class="sticky top-18 z-30 mb-14 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#101b17]/15 dark:border-teal-400/25 bg-[#faf9f4]/95 dark:bg-[#0b1915]/95 p-2.5 shadow-lg backdrop-blur-md">
+          <div class="flex flex-wrap items-center gap-1.5">
             <button
               type="button"
-              data-hero-tab="image"
-              class="hero-media-tab rounded-xl px-4 py-2 text-xs font-bold transition cursor-pointer bg-violet-600 text-white shadow-sm"
+              data-filter-group="all"
+              class="feature-group-btn rounded-xl px-3.5 py-2 font-mono text-xs font-bold transition cursor-pointer bg-teal-700 dark:bg-teal-400 text-white dark:text-[#06100e]"
             >
-              {t("hero.imageTabLabel")}
+              {t("explorer.all")}
             </button>
             <button
               type="button"
-              data-hero-tab="video"
-              class="hero-media-tab rounded-xl px-4 py-2 text-xs font-bold transition cursor-pointer bg-slate-200/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 hover:bg-slate-300/80 dark:hover:bg-slate-700/80"
+              data-filter-group="events"
+              class="feature-group-btn rounded-xl px-3.5 py-2 font-mono text-xs font-bold transition cursor-pointer text-[#2c3f38] dark:text-teal-100/80 hover:bg-teal-500/10"
             >
-              {t("hero.videoTabLabel")}
+              {t("explorer.catEvents")} (9)
+            </button>
+            <button
+              type="button"
+              data-filter-group="visuals"
+              class="feature-group-btn rounded-xl px-3.5 py-2 font-mono text-xs font-bold transition cursor-pointer text-[#2c3f38] dark:text-teal-100/80 hover:bg-teal-500/10"
+            >
+              {t("explorer.catVisuals")} (4)
+            </button>
+            <button
+              type="button"
+              data-filter-group="workflow"
+              class="feature-group-btn rounded-xl px-3.5 py-2 font-mono text-xs font-bold transition cursor-pointer text-[#2c3f38] dark:text-teal-100/80 hover:bg-teal-500/10"
+            >
+              {t("explorer.catWorkflow")} (2)
             </button>
           </div>
 
-          <div id="hero-panel-image">
-            <AppWindowFrame
-              mediaSrc="/media/hero-main.png"
-              headerTitle={t("hero.windowTitle")}
-              alt={t("hero.screenshotAlt")}
-              caption={t("hero.screenshotCaption")}
-              priority={true}
-            />
-          </div>
-
-          <div id="hero-panel-video" class="hidden">
-            <AppWindowFrame
-              mediaSrc="/media/hero-demo.mp4"
-              posterSrc="/media/hero-main.png"
-              headerTitle={t("hero.windowTitle")}
-              alt={t("hero.screenshotAlt")}
-              caption={t("hero.screenshotCaption")}
-              isVideo={true}
-            />
+          <div class="hidden xl:flex items-center gap-2 pr-2 font-mono text-[11px] text-amber-700 dark:text-amber-300">
+            <span>🔍 {t("explorer.zoomHint")}</span>
           </div>
         </div>
 
-        <!-- 4 Highlight Stats -->
-        <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-          <div class="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/85 dark:bg-[#11111e]/85 p-5 text-center shadow-md">
-            <div class="text-3xl sm:text-4xl font-black text-emerald-600 dark:text-emerald-400">
-              {t("hero.stats.s1Value")}
-            </div>
-            <div class="mt-1 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300">
-              {t("hero.stats.s1Label")}
+        <div class="space-y-24">
+          <!-- 2A: Next-Gen Event Engine & AI (#1 - #9) -->
+          <div id="events" data-section-group="events">
+            <SectionHeader
+              chapterNum="02.A"
+              badge={t("sections.events.badge")}
+              title={t("sections.events.title")}
+              subtitle={t("sections.events.subtitle")}
+              accentColor="amber"
+            />
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {eventFeatures.map((feat) => (
+                <FeatureShowcaseCard
+                  badge={t(`features.${feat.key}.badge`)}
+                  replacesPlugin={t(`features.${feat.key}.replaces`)}
+                  title={t(`features.${feat.key}.title`)}
+                  description={t(`features.${feat.key}.description`)}
+                  bullets={[
+                    t(`features.${feat.key}.b1`),
+                    t(`features.${feat.key}.b2`),
+                    t(`features.${feat.key}.b3`)
+                  ]}
+                  mediaSrc={feat.mediaSrc}
+                  posterSrc={feat.posterSrc}
+                  mediaCaption={t(`features.${feat.key}.caption`)}
+                  isVideo={feat.isVideo}
+                  featured={feat.featured}
+                  category="events"
+                />
+              ))}
             </div>
           </div>
 
-          <div class="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/85 dark:bg-[#11111e]/85 p-5 text-center shadow-md">
-            <div class="text-3xl sm:text-4xl font-black text-violet-600 dark:text-violet-400">
-              {t("hero.stats.s2Value")}
-            </div>
-            <div class="mt-1 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300">
-              {t("hero.stats.s2Label")}
+          <!-- 2B: Built-In HUD, Visuals & Atmosphere (#10 - #13) -->
+          <div id="visuals" data-section-group="visuals">
+            <SectionHeader
+              chapterNum="02.B"
+              badge={t("sections.visuals.badge")}
+              title={t("sections.visuals.title")}
+              subtitle={t("sections.visuals.subtitle")}
+              accentColor="cyan"
+            />
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {visualFeatures.map((feat) => (
+                <FeatureShowcaseCard
+                  badge={t(`features.${feat.key}.badge`)}
+                  replacesPlugin={t(`features.${feat.key}.replaces`)}
+                  title={t(`features.${feat.key}.title`)}
+                  description={t(`features.${feat.key}.description`)}
+                  bullets={[
+                    t(`features.${feat.key}.b1`),
+                    t(`features.${feat.key}.b2`),
+                    t(`features.${feat.key}.b3`)
+                  ]}
+                  mediaSrc={feat.mediaSrc}
+                  posterSrc={feat.posterSrc}
+                  mediaCaption={t(`features.${feat.key}.caption`)}
+                  isVideo={feat.isVideo}
+                  featured={feat.featured}
+                  category="visuals"
+                />
+              ))}
             </div>
           </div>
 
-          <div class="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/85 dark:bg-[#11111e]/85 p-5 text-center shadow-md">
-            <div class="text-3xl sm:text-4xl font-black text-indigo-600 dark:text-indigo-400">
-              {t("hero.stats.s3Value")}
-            </div>
-            <div class="mt-1 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300">
-              {t("hero.stats.s3Label")}
-            </div>
-          </div>
+          <!-- 2C: Fast Workflow, Instant Filtering & Easy Debug (#17 - #18) -->
+          <div id="workflow" data-section-group="workflow">
+            <SectionHeader
+              chapterNum="02.C"
+              badge={t("sections.workflow.badge")}
+              title={t("sections.workflow.title")}
+              subtitle={t("sections.workflow.subtitle")}
+              accentColor="teal"
+            />
 
-          <div class="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/85 dark:bg-[#11111e]/85 p-5 text-center shadow-md">
-            <div class="text-3xl sm:text-4xl font-black text-amber-600 dark:text-amber-400">
-              {t("hero.stats.s4Value")}
-            </div>
-            <div class="mt-1 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300">
-              {t("hero.stats.s4Label")}
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {workflowFeatures.map((feat) => (
+                <FeatureShowcaseCard
+                  badge={t(`features.${feat.key}.badge`)}
+                  replacesPlugin={t(`features.${feat.key}.replaces`)}
+                  title={t(`features.${feat.key}.title`)}
+                  description={t(`features.${feat.key}.description`)}
+                  bullets={[
+                    t(`features.${feat.key}.b1`),
+                    t(`features.${feat.key}.b2`),
+                    t(`features.${feat.key}.b3`)
+                  ]}
+                  mediaSrc={feat.mediaSrc}
+                  posterSrc={feat.posterSrc}
+                  mediaCaption={t(`features.${feat.key}.caption`)}
+                  isVideo={feat.isVideo}
+                  featured={feat.featured}
+                  category="workflow"
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -279,218 +545,60 @@ const systemFeatures: FeatureDef[] = [
     </section>
 
     <!-- ==========================================
-         NO PLUGINS NEEDED BANNER
+         CHAPTER 03 (REORDERED): THE ZERO-PLUGIN LEDGER
          ========================================== -->
     <NoPluginsBanner lang={lang} />
 
     <!-- ==========================================
-         SECTION 1: NEXT-GEN EVENT ENGINE & AI (#1 - #9)
+         BOTTOM CALL TO ACTION (ARCANE LOOM BANNER)
          ========================================== -->
-    <section id="events" class="py-20 sm:py-28 border-t border-slate-200/80 dark:border-slate-800/70">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge={t("sections.events.badge")}
-          title={t("sections.events.title")}
-          subtitle={t("sections.events.subtitle")}
-          accentColor="violet"
-        />
+    <section class="relative py-20 sm:py-28 border-t border-[#101b17]/12 dark:border-teal-400/15 overflow-hidden">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="weaver-card corner-ticks rounded-3xl p-8 sm:p-12 lg:p-16 bg-gradient-to-br from-[#101b17] via-[#132620] to-[#1a2416] text-white shadow-2xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-8 space-y-5">
+              <span class="inline-flex items-center gap-2 rounded-md border border-amber-400/30 bg-amber-400/10 px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider text-amber-300">
+                <span>✦</span>
+                <span>{t("cta.badge")}</span>
+              </span>
+              <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+                {t("cta.title")}
+              </h2>
+              <p class="text-sm sm:text-base text-teal-100/80 leading-relaxed max-w-2xl">
+                {t("cta.subtitle")}
+              </p>
 
-        <div class="space-y-12">
-          {eventFeatures.map((feat, idx) => (
-            <FeatureShowcaseCard
-              badge={t(`features.${feat.key}.badge`)}
-              replacesPlugin={t(`features.${feat.key}.replaces`)}
-              title={t(`features.${feat.key}.title`)}
-              description={t(`features.${feat.key}.description`)}
-              bullets={[
-                t(`features.${feat.key}.b1`),
-                t(`features.${feat.key}.b2`),
-                t(`features.${feat.key}.b3`)
-              ]}
-              mediaSrc={feat.mediaSrc}
-              posterSrc={feat.posterSrc}
-              mediaCaption={t(`features.${feat.key}.caption`)}
-              isVideo={feat.isVideo}
-              reverse={idx % 2 === 1}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+              <div class="pt-3 flex flex-wrap items-center gap-4">
+                <a
+                  href="https://rpg-weaver.web.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-teal-400 via-emerald-400 to-amber-300 px-7 py-4 text-sm sm:text-base font-extrabold text-[#06100e] shadow-xl shadow-teal-500/20 hover:opacity-95 transition"
+                >
+                  <span>{t("cta.primaryBtn")}</span>
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+                <a
+                  href="#engine"
+                  class="inline-flex items-center gap-2 rounded-xl border border-teal-300/30 bg-white/5 px-6 py-4 text-sm sm:text-base font-bold text-teal-100 hover:bg-white/10 transition"
+                >
+                  <span>{t("cta.secondaryBtn")}</span>
+                </a>
+              </div>
+            </div>
 
-    <!-- ==========================================
-         SECTION 2: VISUALS, HUD & ATMOSPHERE (#10 - #13)
-         ========================================== -->
-    <section id="visuals" class="py-20 sm:py-28 border-t border-slate-200/80 dark:border-slate-800/70 bg-slate-100/60 dark:bg-[#0c0c18]">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge={t("sections.visuals.badge")}
-          title={t("sections.visuals.title")}
-          subtitle={t("sections.visuals.subtitle")}
-          accentColor="cyan"
-        />
-
-        <div class="space-y-12">
-          {visualFeatures.map((feat, idx) => (
-            <FeatureShowcaseCard
-              badge={t(`features.${feat.key}.badge`)}
-              replacesPlugin={t(`features.${feat.key}.replaces`)}
-              title={t(`features.${feat.key}.title`)}
-              description={t(`features.${feat.key}.description`)}
-              bullets={[
-                t(`features.${feat.key}.b1`),
-                t(`features.${feat.key}.b2`),
-                t(`features.${feat.key}.b3`)
-              ]}
-              mediaSrc={feat.mediaSrc}
-              posterSrc={feat.posterSrc}
-              mediaCaption={t(`features.${feat.key}.caption`)}
-              isVideo={feat.isVideo}
-              reverse={idx % 2 === 1}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 3: INFINITE MAPPING & ASSET PIPELINE (#14 - #16)
-         ========================================== -->
-    <section id="mapping" class="py-20 sm:py-28 border-t border-slate-200/80 dark:border-slate-800/70">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge={t("sections.mapping.badge")}
-          title={t("sections.mapping.title")}
-          subtitle={t("sections.mapping.subtitle")}
-          accentColor="emerald"
-        />
-
-        <div class="space-y-12">
-          {mappingFeatures.map((feat, idx) => (
-            <FeatureShowcaseCard
-              badge={t(`features.${feat.key}.badge`)}
-              replacesPlugin={t(`features.${feat.key}.replaces`)}
-              title={t(`features.${feat.key}.title`)}
-              description={t(`features.${feat.key}.description`)}
-              bullets={[
-                t(`features.${feat.key}.b1`),
-                t(`features.${feat.key}.b2`),
-                t(`features.${feat.key}.b3`)
-              ]}
-              mediaSrc={feat.mediaSrc}
-              posterSrc={feat.posterSrc}
-              mediaCaption={t(`features.${feat.key}.caption`)}
-              isVideo={feat.isVideo}
-              reverse={idx % 2 === 1}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 4: WORKFLOW, FILTERING & EASY DEBUG (#17 - #18)
-         ========================================== -->
-    <section id="workflow" class="py-20 sm:py-28 border-t border-slate-200/80 dark:border-slate-800/70 bg-slate-100/60 dark:bg-[#0c0c18]">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge={t("sections.workflow.badge")}
-          title={t("sections.workflow.title")}
-          subtitle={t("sections.workflow.subtitle")}
-          accentColor="amber"
-        />
-
-        <div class="space-y-12">
-          {workflowFeatures.map((feat, idx) => (
-            <FeatureShowcaseCard
-              badge={t(`features.${feat.key}.badge`)}
-              replacesPlugin={t(`features.${feat.key}.replaces`)}
-              title={t(`features.${feat.key}.title`)}
-              description={t(`features.${feat.key}.description`)}
-              bullets={[
-                t(`features.${feat.key}.b1`),
-                t(`features.${feat.key}.b2`),
-                t(`features.${feat.key}.b3`)
-              ]}
-              mediaSrc={feat.mediaSrc}
-              posterSrc={feat.posterSrc}
-              mediaCaption={t(`features.${feat.key}.caption`)}
-              isVideo={feat.isVideo}
-              reverse={idx % 2 === 1}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 5: ENGINE CUSTOMIZATION & PIXI.JS (#19 - #22)
-         ========================================== -->
-    <section id="system" class="py-20 sm:py-28 border-t border-slate-200/80 dark:border-slate-800/70">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge={t("sections.system.badge")}
-          title={t("sections.system.title")}
-          subtitle={t("sections.system.subtitle")}
-          accentColor="rose"
-        />
-
-        <div class="space-y-12">
-          {systemFeatures.map((feat, idx) => (
-            <FeatureShowcaseCard
-              badge={t(`features.${feat.key}.badge`)}
-              replacesPlugin={t(`features.${feat.key}.replaces`)}
-              title={t(`features.${feat.key}.title`)}
-              description={t(`features.${feat.key}.description`)}
-              bullets={[
-                t(`features.${feat.key}.b1`),
-                t(`features.${feat.key}.b2`),
-                t(`features.${feat.key}.b3`)
-              ]}
-              mediaSrc={feat.mediaSrc}
-              posterSrc={feat.posterSrc}
-              mediaCaption={t(`features.${feat.key}.caption`)}
-              isVideo={feat.isVideo}
-              reverse={idx % 2 === 1}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         BOTTOM CALL TO ACTION
-         ========================================== -->
-    <section class="py-20 sm:py-24 border-t border-slate-200/80 dark:border-slate-800/80 bg-gradient-to-b from-violet-600/10 via-indigo-600/5 to-transparent">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-        <span class="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-violet-700 dark:text-violet-300 mb-4">
-          {t("cta.badge")}
-        </span>
-        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
-          {t("cta.title")}
-        </h2>
-        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
-          {t("cta.subtitle")}
-        </p>
-
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="https://rpg-weaver.web.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 px-8 py-4 text-sm sm:text-base font-extrabold text-white shadow-xl shadow-violet-600/30 hover:from-violet-500 hover:via-purple-500 hover:to-indigo-500 transition"
-          >
-            <span>{t("cta.primaryBtn")}</span>
-            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
-            </svg>
-          </a>
-          <a
-            href="#no-plugins"
-            class="inline-flex items-center gap-2 rounded-2xl border border-slate-300 dark:border-slate-700 bg-white/90 dark:bg-[#141424]/90 px-6 py-4 text-sm sm:text-base font-bold text-slate-800 dark:text-slate-200 hover:border-violet-500/50 transition"
-          >
-            <span>{t("cta.secondaryBtn")}</span>
-          </a>
+            <div class="lg:col-span-4 flex justify-center">
+              <img
+                src="/rpgweaver-logo.png"
+                alt={t("brand.logoAlt")}
+                width="220"
+                height="220"
+                class="w-44 sm:w-52 h-auto object-contain drop-shadow-[0_12px_28px_rgba(20,184,166,0.3)]"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -499,38 +607,65 @@ const systemFeatures: FeatureDef[] = [
   <!-- ==========================================
        FOOTER
        ========================================== -->
-  <footer class="border-t border-slate-200/80 dark:border-slate-800/80 py-12 bg-white/60 dark:bg-[#07070e]">
+  <footer class="border-t border-[#101b17]/12 dark:border-teal-400/15 py-12 bg-[#eae8df] dark:bg-[#050a08]">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-3.5">
         <img
           src="/rpgweaver-icon.png"
           alt={t("brand.logoAlt")}
-          width="32"
-          height="32"
-          class="h-8 w-8 rounded-lg"
+          width="36"
+          height="36"
+          class="h-9 w-9 rounded-lg ring-1 ring-teal-500/30"
         />
         <div>
-          <div class="text-sm font-extrabold text-slate-900 dark:text-white">{t("brand.name")}</div>
-          <p class="text-xs text-slate-500 dark:text-slate-400 max-w-md">{t("footer.description")}</p>
+          <div class="font-display text-sm font-bold text-[#101b17] dark:text-white">{t("brand.name")}</div>
+          <p class="text-xs text-[#435850] dark:text-teal-200/60 max-w-md">{t("footer.description")}</p>
         </div>
       </div>
 
-      <div class="flex flex-col sm:items-end gap-2 text-xs text-slate-500 dark:text-slate-400">
+      <div class="flex flex-col sm:items-end gap-1.5 font-mono text-xs text-[#435850] dark:text-teal-200/60">
         <a
           href="https://rpg-weaver.web.app/"
           target="_blank"
           rel="noopener noreferrer"
-          class="font-bold text-violet-600 dark:text-violet-400 hover:underline"
+          class="font-bold text-teal-700 dark:text-teal-300 hover:underline"
         >
-          {t("footer.launchApp")}
+          {t("footer.launchApp")} ↗
         </a>
         <span>{t("footer.copyright")}</span>
       </div>
     </div>
   </footer>
+
+  <!-- ==========================================
+       FULLSCREEN MEDIA LIGHTBOX MODAL
+       ========================================== -->
+  <div
+    id="weaver-lightbox"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 p-4 sm:p-8 backdrop-blur-md"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="relative w-full max-w-6xl rounded-2xl border border-teal-400/30 bg-[#07110e] shadow-2xl overflow-hidden">
+      <div class="flex items-center justify-between border-b border-white/10 bg-[#0b1915] px-4 py-3">
+        <span id="weaver-lightbox-title" class="font-mono text-xs font-bold text-teal-300 truncate"></span>
+        <button
+          type="button"
+          id="weaver-lightbox-close"
+          aria-label={t("explorer.closeModal")}
+          class="rounded-lg border border-white/15 bg-white/5 px-3 py-1 font-mono text-xs font-bold text-white hover:bg-teal-400 hover:text-[#06100e] transition cursor-pointer"
+        >
+          ESC ✕
+        </button>
+      </div>
+      <div id="weaver-lightbox-body" class="bg-black flex items-center justify-center max-h-[78vh] overflow-hidden"></div>
+      <div id="weaver-lightbox-caption" class="border-t border-white/10 bg-[#0b1915] px-4 py-2.5 font-mono text-xs text-teal-100/80 text-center"></div>
+    </div>
+  </div>
 </BaseLayout>
 
 <script>
+  // 1. Hero Workspace Switcher (Screenshot vs Live Video)
   const tabs = document.querySelectorAll<HTMLButtonElement>("[data-hero-tab]");
   const imgPanel = document.getElementById("hero-panel-image");
   const vidPanel = document.getElementById("hero-panel-video");
@@ -540,10 +675,12 @@ const systemFeatures: FeatureDef[] = [
       const mode = btn.getAttribute("data-hero-tab");
       tabs.forEach((tBtn) => {
         const active = tBtn.getAttribute("data-hero-tab") === mode;
-        tBtn.classList.toggle("bg-violet-600", active);
+        tBtn.classList.toggle("bg-teal-700", active);
+        tBtn.classList.toggle("dark:bg-teal-400", active);
         tBtn.classList.toggle("text-white", active);
-        tBtn.classList.toggle("bg-slate-200/80", !active);
-        tBtn.classList.toggle("dark:bg-slate-800/80", !active);
+        tBtn.classList.toggle("dark:text-[#06100e]", active);
+        tBtn.classList.toggle("text-[#3b4f48]", !active);
+        tBtn.classList.toggle("dark:text-teal-200/75", !active);
       });
       if (mode === "video") {
         imgPanel?.classList.add("hidden");
@@ -553,5 +690,75 @@ const systemFeatures: FeatureDef[] = [
         imgPanel?.classList.remove("hidden");
       }
     });
+  });
+
+  // 2. Interactive Feature Category Filter
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>("[data-filter-group]");
+  const sectionGroups = document.querySelectorAll<HTMLElement>("[data-section-group]");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetGroup = btn.getAttribute("data-filter-group") || "all";
+      filterBtns.forEach((b) => {
+        const isActive = b.getAttribute("data-filter-group") === targetGroup;
+        b.classList.toggle("bg-teal-700", isActive);
+        b.classList.toggle("dark:bg-teal-400", isActive);
+        b.classList.toggle("text-white", isActive);
+        b.classList.toggle("dark:text-[#06100e]", isActive);
+        b.classList.toggle("text-[#2c3f38]", !isActive);
+        b.classList.toggle("dark:text-teal-100/80", !isActive);
+      });
+
+      sectionGroups.forEach((sec) => {
+        const groupName = sec.getAttribute("data-section-group");
+        if (targetGroup === "all" || groupName === targetGroup) {
+          sec.classList.remove("hidden");
+        } else {
+          sec.classList.add("hidden");
+        }
+      });
+    });
+  });
+
+  // 3. Fullscreen Media Lightbox Inspector
+  const lightbox = document.getElementById("weaver-lightbox");
+  const lightboxTitle = document.getElementById("weaver-lightbox-title");
+  const lightboxBody = document.getElementById("weaver-lightbox-body");
+  const lightboxCaption = document.getElementById("weaver-lightbox-caption");
+  const lightboxClose = document.getElementById("weaver-lightbox-close");
+
+  function closeLightbox() {
+    if (!lightbox || !lightboxBody) return;
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+    lightboxBody.innerHTML = "";
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-lightbox-trigger]").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      if (!lightbox || !lightboxBody || !lightboxTitle || !lightboxCaption) return;
+      const src = trigger.getAttribute("data-media-src") || "";
+      const poster = trigger.getAttribute("data-poster-src") || "";
+      const isVideo = trigger.getAttribute("data-is-video") === "true";
+      const title = trigger.getAttribute("data-title") || "";
+      const caption = trigger.getAttribute("data-caption") || "";
+
+      lightboxTitle.textContent = title;
+      lightboxCaption.textContent = caption;
+      lightboxBody.innerHTML = isVideo
+        ? `<video src="${src}" poster="${poster}" controls autoplay loop muted playsinline class="max-h-[76vh] w-auto object-contain"></video>`
+        : `<img src="${src}" alt="${title}" class="max-h-[76vh] w-auto object-contain" />`;
+
+      lightbox.classList.remove("hidden");
+      lightbox.classList.add("flex");
+    });
+  });
+
+  lightboxClose?.addEventListener("click", closeLightbox);
+  lightbox?.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
   });
 </script>

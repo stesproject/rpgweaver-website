@@ -9,17 +9,28 @@
     "logoAlt": "Logo RPG Weaver"
   },
   "nav": {
+    "engine": "Architettura",
+    "features": "22 Funzioni",
     "noPlugins": "Zero Plugin",
     "events": "Motore Eventi",
     "visuals": "HUD e Grafica",
     "mapping": "Livelli e Asset",
     "workflow": "Debug e Ricerca",
     "system": "Sistema e Pixi.js",
-    "launchApp": "Avvia Web App",
+    "launchApp": "Apri App",
     "switchLangLabel": "Cambia lingua del sito",
     "toggleThemeLabel": "Cambia tema chiaro o scuro",
     "langEn": "EN",
     "langIt": "IT"
+  },
+  "explorer": {
+    "all": "Tutte le 22 Funzioni",
+    "catSystem": "Pixi.js, Griglia e Livelli",
+    "catEvents": "IA Eventi e Logica",
+    "catVisuals": "HUD, Immagini e Nebbie",
+    "catWorkflow": "Ricerca, Input e Debug",
+    "zoomHint": "Clicca sui media per ingrandire",
+    "closeModal": "Chiudi anteprima"
   },
   "hero": {
     "eyebrow": "Motore RPG 2D 100% nel Browser • Alimentato da Pixi.js",

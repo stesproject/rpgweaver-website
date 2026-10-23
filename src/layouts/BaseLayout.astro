@@ -5,6 +5,8 @@ import { useTranslations, localizeUrl } from "../i18n/utils";
 
 interface Props {
   lang: SupportedLang;
+  title?: string;
+  description?: string;
 }
 
 const { lang } = Astro.props;
@@ -27,12 +29,20 @@ const itUrl = new URL(localizeUrl("/", "it"), Astro.site);
     <link rel="alternate" hreflang="x-default" href={enUrl} />
     <link rel="icon" type="image/png" href="/rpgweaver-icon.png" />
 
+    <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={t("meta.title")} />
     <meta property="og:description" content={t("meta.description")} />
     <meta property="og:image" content={new URL("/media/hero-main.png", Astro.site)} />
-    <meta property="og:image:alt" content={t("meta.ogImageAlt")} />
+    <meta property="og:image:alt" content={t("meta.title")} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={t("meta.title")} />
@@ -91,7 +101,7 @@ const itUrl = new URL(localizeUrl("/", "it"), Astro.site);
       })();
     </script>
   </head>
-  <body class="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#090912] dark:text-slate-100 antialiased selection:bg-violet-500/30 selection:text-violet-900 dark:selection:text-violet-200 transition-colors duration-200">
+  <body class="min-h-screen bg-[#f4f3ec] text-[#101b17] dark:bg-[#060d0b] dark:text-[#eaf2ef] antialiased selection:bg-teal-500/25 selection:text-teal-950 dark:selection:text-teal-200 transition-colors duration-300">
     <slot />
   </body>
 </html>

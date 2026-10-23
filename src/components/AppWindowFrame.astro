@@ -20,22 +20,44 @@ const {
 } = Astro.props;
 ---
 
-<div class="group relative rounded-2xl border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-[#11111d] shadow-2xl shadow-slate-900/10 dark:shadow-black/75 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
-  <!-- Window Top Bar -->
-  <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800/80 bg-slate-100 dark:bg-[#171726] px-4 py-2.5">
-    <div class="flex items-center gap-2">
-      <span class="h-2.5 w-2.5 rounded-full bg-rose-500/80"></span>
-      <span class="h-2.5 w-2.5 rounded-full bg-amber-500/80"></span>
-      <span class="h-2.5 w-2.5 rounded-full bg-emerald-500/80"></span>
+<figure
+  class="group/frame relative rounded-xl border border-[#101b17]/15 dark:border-teal-400/20 bg-[#101b17] dark:bg-[#07110e] shadow-xl shadow-teal-950/10 dark:shadow-black/70 overflow-hidden cursor-zoom-in"
+  data-lightbox-trigger
+  data-media-src={mediaSrc}
+  data-poster-src={posterSrc || ""}
+  data-is-video={isVideo ? "true" : "false"}
+  data-title={headerTitle}
+  data-caption={caption || alt}
+>
+  <!-- Engine HUD Telemetry Top Bar (No macOS traffic lights) -->
+  <div class="flex items-center justify-between border-b border-white/10 bg-[#14231e] dark:bg-[#0b1915] px-3.5 py-2 text-[11px] font-mono">
+    <div class="flex items-center gap-2 min-w-0">
+      <span
+        class:list={[
+          "inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider shrink-0",
+          isVideo
+            ? "bg-amber-400/20 text-amber-300 border border-amber-400/30"
+            : "bg-teal-400/15 text-teal-300 border border-teal-400/25"
+        ]}
+      >
+        <span class:list={["h-1.5 w-1.5 rounded-full", isVideo ? "bg-amber-400 animate-pulse" : "bg-teal-400"]}></span>
+        {isVideo ? "LIVE" : "VIEW"}
+      </span>
+      <span class="truncate text-teal-100/80 font-medium">{headerTitle}</span>
     </div>
-    <div class="truncate px-3 font-mono text-[11px] font-medium text-slate-600 dark:text-slate-400">
-      {headerTitle}
+
+    <div class="flex items-center gap-2 shrink-0 text-teal-300/60">
+      <span class="hidden sm:inline text-[10px] uppercase tracking-widest">PIXI.JS</span>
+      <span class="inline-flex h-5 w-5 items-center justify-center rounded bg-white/5 text-teal-200/80 group-hover/frame:bg-teal-400 group-hover/frame:text-[#06100e] transition-colors" title="Expand media">
+        <svg class="h-3 w-3" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4h4M16 8V4h-4M4 12v4h4M16 12v4h-4" />
+        </svg>
+      </span>
     </div>
-    <div class="w-11" aria-hidden="true"></div>
   </div>
 
-  <!-- Media Content -->
-  <div class="relative bg-slate-900 dark:bg-[#0b0b13] aspect-16/10 w-full overflow-hidden">
+  <!-- Media Viewport -->
+  <div class="relative bg-[#070f0c] aspect-16/10 w-full overflow-hidden">
     {isVideo ? (
       <video
         src={mediaSrc}
@@ -45,22 +67,25 @@ const {
         muted
         playsinline
         preload="metadata"
-        class="h-full w-full object-cover"
+        class="h-full w-full object-cover transition-transform duration-500 group-hover/frame:scale-[1.015]"
       ></video>
     ) : (
       <img
         src={mediaSrc}
         alt={alt}
         loading={priority ? "eager" : "lazy"}
-        class="h-full w-full object-cover"
+        class="h-full w-full object-cover transition-transform duration-500 group-hover/frame:scale-[1.015]"
       />
     )}
   </div>
 
-  <!-- Optional Bottom Caption -->
+  <!-- Optional Bottom Technical Readout -->
   {caption && (
-    <div class="border-t border-slate-200 dark:border-slate-800/70 bg-slate-50 dark:bg-[#131320]/90 px-4 py-2 text-center text-xs text-slate-600 dark:text-slate-400">
-      {caption}
-    </div>
+    <figcaption class="border-t border-white/10 bg-[#0d1915] px-3.5 py-2 text-[11px] font-mono text-teal-100/70 flex items-center justify-between gap-2">
+      <span class="truncate">{caption}</span>
+      <span class="text-[10px] text-amber-300/80 shrink-0 uppercase tracking-wider opacity-0 group-hover/frame:opacity-100 transition-opacity">
+        [ZOOM +]
+      </span>
+    </figcaption>
   )}
-</div>
+</figure>

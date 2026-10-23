@@ -12,75 +12,77 @@ const enHref = getSwitchLocaleUrl(Astro.url.pathname, "en");
 const itHref = getSwitchLocaleUrl(Astro.url.pathname, "it");
 ---
 
-<header class="sticky top-0 z-50 border-b border-slate-200/80 dark:border-slate-800/80 bg-white/85 dark:bg-[#090912]/85 backdrop-blur-xl transition-colors">
-  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<header class="sticky top-3 z-50 px-3 sm:px-6 pt-2">
+  <div class="mx-auto flex h-13 max-w-4xl items-center justify-between rounded-full border border-[#101b17]/15 dark:border-teal-400/20 bg-[#faf9f4]/90 dark:bg-[#091512]/90 px-3 sm:px-4 shadow-xl shadow-teal-950/5 dark:shadow-black/50 backdrop-blur-xl transition-colors">
     <!-- Brand -->
-    <a href={lang === "it" ? "/it" : "/"} class="flex items-center gap-3 group">
-      <img
-        src="/rpgweaver-icon.png"
-        alt={t("brand.logoAlt")}
-        width="36"
-        height="36"
-        class="h-9 w-9 rounded-xl shadow-md shadow-violet-500/15 ring-1 ring-slate-900/10 dark:ring-white/10 transition-transform group-hover:scale-105"
-      />
-      <span class="text-base font-extrabold tracking-tight text-slate-900 dark:text-white">
+    <a href={lang === "it" ? "/it" : "/"} class="flex items-center gap-2.5 group pl-1">
+      <div class="relative flex h-8 w-8 items-center justify-center rounded-full bg-[#0c1a16] ring-1 ring-teal-500/40 overflow-hidden transition-transform group-hover:scale-105">
+        <img
+          src="/rpgweaver-icon.png"
+          alt={t("brand.logoAlt")}
+          width="32"
+          height="32"
+          class="h-full w-full object-cover"
+        />
+      </div>
+      <span class="font-display text-sm sm:text-base font-bold tracking-tight text-[#101b17] dark:text-white">
         {t("brand.name")}
       </span>
     </a>
 
-    <!-- Navigation Links -->
-    <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-      <a href="#no-plugins" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
+    <!-- Concise 3-Link Navigation Pill -->
+    <nav class="hidden md:flex items-center gap-1 rounded-full bg-[#eae8df]/80 dark:bg-[#0f211c]/90 px-2 py-1 text-xs font-semibold text-[#334740] dark:text-teal-100/80 border border-[#101b17]/5 dark:border-teal-400/10">
+      <a
+        href="#engine"
+        class="rounded-full px-3 py-1 hover:bg-white dark:hover:bg-teal-500/15 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
+      >
+        {t("nav.engine")}
+      </a>
+      <a
+        href="#features"
+        class="rounded-full px-3 py-1 hover:bg-white dark:hover:bg-teal-500/15 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
+      >
+        {t("nav.features")}
+      </a>
+      <a
+        href="#no-plugins"
+        class="rounded-full px-3 py-1 hover:bg-white dark:hover:bg-teal-500/15 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
+      >
         {t("nav.noPlugins")}
-      </a>
-      <a href="#events" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
-        {t("nav.events")}
-      </a>
-      <a href="#visuals" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
-        {t("nav.visuals")}
-      </a>
-      <a href="#mapping" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
-        {t("nav.mapping")}
-      </a>
-      <a href="#workflow" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
-        {t("nav.workflow")}
-      </a>
-      <a href="#system" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
-        {t("nav.system")}
       </a>
     </nav>
 
-    <!-- Actions & Language Switcher -->
-    <div class="flex items-center gap-3">
+    <!-- Compact Actions: Theme, Lang, Launch -->
+    <div class="flex items-center gap-1.5 sm:gap-2">
       <button
         type="button"
         data-website-theme-toggle
         aria-label={t("nav.toggleThemeLabel")}
         title={t("nav.toggleThemeLabel")}
-        class="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-[#131320] text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition cursor-pointer"
+        class="flex h-8 w-8 items-center justify-center rounded-full border border-[#101b17]/12 dark:border-teal-400/20 bg-[#eae8df]/70 dark:bg-[#10231e] text-[#2c3f38] hover:text-teal-700 dark:text-teal-200/80 dark:hover:text-amber-300 transition cursor-pointer"
       >
         <!-- Sun icon (visible in dark mode) -->
-        <svg class="hidden dark:block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <svg class="hidden dark:block h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <circle cx="12" cy="12" r="5" />
           <path stroke-linecap="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
         </svg>
         <!-- Moon icon (visible in light mode) -->
-        <svg class="block dark:hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <svg class="block dark:hidden h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
         </svg>
       </button>
 
       <div
-        class="flex items-center rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-[#131320] p-0.5 text-xs font-semibold"
+        class="flex items-center rounded-full border border-[#101b17]/12 dark:border-teal-400/20 bg-[#eae8df]/70 dark:bg-[#10231e] p-0.5 font-mono text-[11px] font-bold"
         aria-label={t("nav.switchLangLabel")}
       >
         <a
           href={enHref}
           class:list={[
-            "rounded-md px-2.5 py-1 transition",
+            "rounded-full px-2 py-0.5 transition",
             lang === "en"
-              ? "bg-violet-600 text-white font-bold shadow-xs"
-              : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+              ? "bg-teal-700 dark:bg-teal-400 text-white dark:text-[#06100e]"
+              : "text-[#425850] hover:text-[#101b17] dark:text-teal-200/70 dark:hover:text-white"
           ]}
         >
           {t("nav.langEn")}
@@ -88,10 +90,10 @@ const itHref = getSwitchLocaleUrl(Astro.url.pathname, "it");
         <a
           href={itHref}
           class:list={[
-            "rounded-md px-2.5 py-1 transition",
+            "rounded-full px-2 py-0.5 transition",
             lang === "it"
-              ? "bg-violet-600 text-white font-bold shadow-xs"
-              : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+              ? "bg-teal-700 dark:bg-teal-400 text-white dark:text-[#06100e]"
+              : "text-[#425850] hover:text-[#101b17] dark:text-teal-200/70 dark:hover:text-white"
           ]}
         >
           {t("nav.langIt")}
@@ -102,7 +104,7 @@ const itHref = getSwitchLocaleUrl(Astro.url.pathname, "it");
         href="https://rpg-weaver.web.app/"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 px-4 py-2 text-xs font-bold text-white shadow-md shadow-violet-500/25 hover:from-violet-500 hover:via-purple-500 hover:to-indigo-500 transition"
+        class="inline-flex items-center gap-1.5 rounded-full bg-[#101b17] dark:bg-gradient-to-r dark:from-teal-400 dark:via-emerald-400 dark:to-amber-300 px-3.5 py-1.5 text-xs font-extrabold text-[#f4f3ec] dark:text-[#06100e] shadow-sm hover:opacity-90 transition"
       >
         <span>{t("nav.launchApp")}</span>
         <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
