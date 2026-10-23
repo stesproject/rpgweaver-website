@@ -10,7 +10,7 @@
   },
   "nav": {
     "engine": "Architettura",
-    "features": "22 Funzioni",
+    "features": "Funzioni",
     "noPlugins": "Zero Plugin",
     "events": "Motore Eventi",
     "visuals": "HUD e Grafica",
@@ -24,12 +24,6 @@
     "langIt": "IT"
   },
   "explorer": {
-    "all": "Tutte le 22 Funzioni",
-    "catSystem": "Pixi.js, Griglia e Livelli",
-    "catEvents": "IA Eventi e Logica",
-    "catVisuals": "HUD, Immagini e Nebbie",
-    "catWorkflow": "Ricerca, Input e Debug",
-    "zoomHint": "Clicca sui media per ingrandire",
     "closeModal": "Chiudi anteprima"
   },
   "hero": {
@@ -38,7 +32,7 @@
     "titleLine2": "La Potenza di un Engine Professionale.",
     "subtitle": "Smetti di cercare decine di plugin di terze parti incompatibili. RPG Weaver integra nativamente tutto ciò che hai sempre desiderato in RPG Maker: dal movimento al pixel, collisioni tra eventi e template riutilizzabili fino a barre salute con ritaglio immagini, livelli mappa infiniti e rendering Pixi.js a 60 FPS.",
     "primaryCta": "Avvia RPG Weaver Ora",
-    "secondaryCta": "Scopri le 22 Funzioni Integrate",
+    "secondaryCta": "Scopri le Funzioni Integrate",
     "noInstallNote": "Funziona istantaneamente nel browser • Asset predefiniti inclusi • Nessun account richiesto",
     "windowTitle": "RPG Weaver — Chronicles of Aetheria (Workspace Live)",
     "screenshotAlt": "Area di lavoro completa di RPG Weaver con la mappa Oakwood Village, eventi impilati e multi-area, e l'Event Editor visuale",
@@ -48,8 +42,8 @@
     "stats": {
       "s1Value": "0",
       "s1Label": "Plugin Esterni Necessari",
-      "s2Value": "22+",
-      "s2Label": "Funzioni Pro Nativamente Integrate",
+      "s2Value": "100%",
+      "s2Label": "Funzioni Nativamente Integrate",
       "s3Value": "∞",
       "s3Label": "Livelli Mappa Riordinabili",
       "s4Value": "60 FPS",
@@ -108,34 +102,34 @@
   },
   "sections": {
     "events": {
-      "badge": "1 • Motore Eventi di Nuova Generazione e IA",
+      "badge": "Motore Eventi di Nuova Generazione e IA",
       "title": "Eventi che Fanno Davvero Ciò che Vuoi—Senza Plugin",
       "subtitle": "Ordinati dalle funzioni più richieste dagli utenti RPG Maker: movimento al pixel, percorsi di inseguimento intelligenti, collisioni tra eventi, trasferimento NPC tra mappe, controllo telecamera, template, eventi multi-area, eventi impilati e salvataggio posizione."
     },
     "visuals": {
-      "badge": "2 • HUD, Grafica e Atmosfera Integrati",
+      "badge": "HUD, Grafica e Atmosfera Integrati",
       "title": "Crea Barre Salute, Cutscene e Nebbie in Modo Visuale",
       "subtitle": "Basta calcoli di coordinate alla cieca o script HUD complessi. Posiziona ogni immagine con anteprima interattiva, ritaglia barre dinamiche tramite variabili, regola la velocità di scrittura del testo e anima le nebbie in tempo reale."
     },
     "mapping": {
-      "badge": "3 • Mapping Infinito e Pipeline Asset Professionale",
+      "badge": "Mapping Infinito e Pipeline Asset Professionale",
       "title": "Livelli Mappa Illimitati e Controllo Totale sugli Spritesheet",
       "subtitle": "Supera il limite dei 4 livelli fissi e dei prefissi nei nomi file. Crea tutti i livelli che la tua scena richiede e configura qualsiasi tileset, autotile animato o foglio personaggio direttamente nel Resource Manager."
     },
     "workflow": {
-      "badge": "4 • Flusso Veloce, Liste Filtrabili e Debug Immediato",
+      "badge": "Flusso Veloce, Liste Filtrabili e Debug Immediato",
       "title": "Trova Tutto in Millisecondi. Fai Debug Senza Tentativi alla Cieca.",
       "subtitle": "Ogni lista in RPG Weaver è filtrabile in tempo reale mentre scrivi, e ispezionare lo stato del gioco richiede solo una spunta su un comando Comment o l'apertura dei DevTools del browser."
     },
     "system": {
-      "badge": "5 • Personalizzazione Motore e Prestazioni Pixi.js",
+      "badge": "Personalizzazione Motore e Prestazioni Pixi.js",
       "title": "I Tuoi Input, la Tua Griglia, la Tua Risoluzione—A 60 FPS",
       "subtitle": "Personalizza comandi da tastiera, dimensioni delle celle e risoluzione della telecamera in pochi secondi, con la fluidità del motore WebGL/WebGPU accelerato via hardware con Pixi.js."
     }
   },
   "features": {
     "pixelMovement": {
-      "badge": "#1 • Database → System → Movement Mode",
+      "badge": "Database → System → Movement Mode",
       "replaces": "Sostituisce i Plugin di Pixel Movement",
       "title": "Movimento al Pixel Nativo e Modalità Griglia Classica",
       "description": "Passa dall'esplorazione classica cella-per-cella (Grid) al movimento fluido sub-tile in 8 direzioni (Pixel) con un singolo clic in Database → System.",
@@ -145,7 +139,7 @@
       "caption": "Scheda Database → System con il selettore nativo Movement Mode (Grid vs. Pixel) e movimento fluido in playtest."
     },
     "eventFollow": {
-      "badge": "#2 • Set Movement Route → Move Toward...",
+      "badge": "Set Movement Route → Move Toward...",
       "replaces": "Sostituisce i Plugin di Inseguimento e Follower",
       "title": "Fai Seguire agli Eventi Altri Eventi (o il Giocatore)",
       "description": "Dentro Set Movement Route, clicca su Move Toward... (o Move Away / Turn Toward) per far sì che qualsiasi evento insegua o si rivolga dinamicamente verso il Giocatore o verso qualsiasi altro Evento della mappa.",
@@ -155,7 +149,7 @@
       "caption": "Finestra Set Movement Route con il selettore Move Toward... aperto per far inseguire il Giocatore o un altro Evento."
     },
     "eventTouch": {
-      "badge": "#3 • Conditional Branch → Pagina 3 → Event Touching",
+      "badge": "Conditional Branch → Pagina 3 → Event Touching",
       "replaces": "Sostituisce i Plugin di Collisione tra Eventi",
       "title": "Attiva Eventi Quando l'Evento X Tocca l'Evento Y",
       "description": "Vuoi che un masso attivi un interruttore a pressione o che una guardia intercetti un NPC? La Pagina 3 di Conditional Branch include il controllo nativo 'Event X is touching Event Y'.",
@@ -165,7 +159,7 @@
       "caption": "Finestra Conditional Branch sulla Pagina 3 con la condizione nativa 'Event [EV001: Companion Fox] is touching [EV002: Patrol Guard]'."
     },
     "eventTransfer": {
-      "badge": "#4 • Comando Transfer → Subject to Transfer",
+      "badge": "Comando Transfer → Subject to Transfer",
       "replaces": "Sostituisce i Plugin di Trasferimento NPC",
       "title": "Trasferisci Qualsiasi Evento su Altre Mappe—Non Solo il Giocatore",
       "description": "Il comando Transfer non è più limitato al solo giocatore. Usa 'Subject to Transfer' per spostare il Giocatore, Questo Evento o qualsiasi Evento della mappa verso un'altra mappa o coordinata.",
@@ -175,7 +169,7 @@
       "caption": "Finestra del comando Transfer con 'Subject to Transfer: EV001: Companion Fox' diretto a Crystal Sanctum (10, 8)."
     },
     "cameraTarget": {
-      "badge": "#5 • Comando Evento → Change Camera Target...",
+      "badge": "Comando Evento → Change Camera Target...",
       "replaces": "Sostituisce i Plugin di Controllo Telecamera",
       "title": "Controlla la Telecamera e Segui Qualsiasi Bersaglio",
       "description": "Dirigi cutscene cinematografiche senza sforzo. Usa Change Camera Target... per agganciare la telecamera al Giocatore, a Questo Evento, a qualsiasi Evento della mappa o a una posizione fissa con transizione fluida o istantanea.",
@@ -185,7 +179,7 @@
       "caption": "Finestra Change Camera Target configurata per spostare fluidamente l'inquadratura su EV002: Patrol Guard in 45 frame."
     },
     "eventTemplates": {
-      "badge": "#6 • Stella Event Editor + Comando Spawn Event",
+      "badge": "Stella Event Editor + Comando Spawn Event",
       "replaces": "Sostituisce i Plugin di Event Spawner e Prefab",
       "title": "Template Eventi Riutilizzabili e Generazione Dinamica (Spawn Event)",
       "description": "Clicca sull'icona a Stella nell'intestazione dell'Event Editor per salvare qualsiasi evento come Template riutilizzabile. Posiziona istanze dalla barra laterale o generale a runtime con il comando Spawn Event...",
@@ -195,7 +189,7 @@
       "caption": "Finestra del comando Spawn Event che istanzia il template 'Companion Fox' e salva l'ID generato nella Variabile #0003."
     },
     "multiAreaEvents": {
-      "badge": "#7 • Intestazione Event Editor → Area (W × H)",
+      "badge": "Intestazione Event Editor → Area (W × H)",
       "replaces": "Sostituisce i Plugin di Hitbox e Trigger Multi-Cella",
       "title": "Eventi Multi-Area Più Grandi di 1×1 Cella",
       "description": "Smetti di copiare e incollare decine di eventi identici lungo cancelli, ponti o soglie. Imposta larghezza e altezza (Area W × H) direttamente nell'Event Editor o trascina con lo strumento Rettangolo.",
@@ -205,7 +199,7 @@
       "caption": "EV003: Ancient Gate configurato con un'area di 3×2 celle nell'Event Editor ed evidenziato sulla mappa."
     },
     "stackedEvents": {
-      "badge": "#8 • Eventi Impilati e Menu Contestuale Multi-Evento",
+      "badge": "Eventi Impilati e Menu Contestuale Multi-Evento",
       "replaces": "Sostituisce i Plugin di Eventi Sovrapposti",
       "title": "Impila Più Eventi Uno Sopra l'Altro sulla Stessa Cella",
       "description": "Posiziona tutti gli eventi che vuoi sulla stessa coordinata (X, Y). Passa il mouse per vedere l'elenco completo degli eventi impilati, oppure fai clic destro per modificare, copiare, eliminare o aggiungere un altro evento in quel punto.",
@@ -215,7 +209,7 @@
       "caption": "Il clic destro sulla cella (9, 8) mostra EV004: Chest Trigger, EV005: Light Aura Controller ed EV006: Trap Sensor impilati."
     },
     "savePosition": {
-      "badge": "#9 • Event Editor → Options → Save Position",
+      "badge": "Event Editor → Options → Save Position",
       "replaces": "Sostituisce i Plugin di Salvataggio Posizione Eventi",
       "title": "Opzione 'Save Position' per Puzzle e NPC Persistenti",
       "description": "Hai spinto un masso in un puzzle o spostato un NPC durante una missione? Spunta 'Save Position' nel riquadro Options dell'Event Editor per ricordare automaticamente la sua posizione tra cambi mappa e salvataggi.",
@@ -225,7 +219,7 @@
       "caption": "Event Editor aperto su EV001: Companion Fox con la spunta nativa 'Save Position' attiva nel pannello Options."
     },
     "cropPicture": {
-      "badge": "#10 • Comando Evento → Crop Picture...",
+      "badge": "Comando Evento → Crop Picture...",
       "replaces": "Sostituisce i Plugin di Barre Salute e HUD",
       "title": "Usa Facilmente le Immagini come Barre della Vita (Crop Picture)",
       "description": "Creare un HUD personalizzato richiede pochi secondi: mostra la grafica della barra con Show Picture e usa Crop Picture... per collegare la percentuale visibile di larghezza o altezza (0–100%) a una Variabile.",
@@ -235,7 +229,7 @@
       "caption": "Finestra Crop Picture che collega larghezza e altezza (0–100%) dell'Immagine #1 alle variabili Player HP % e Boss Shield %."
     },
     "picturePreview": {
-      "badge": "#11 • Comando Evento → Show Picture...",
+      "badge": "Comando Evento → Show Picture...",
       "replaces": "Sostituisce i Plugin di Posizionamento Visuale Immagini",
       "title": "Anteprima Interattiva di Posizionamento Immagine",
       "description": "Non dovrai più indovinare le coordinate X e Y a tentativi. Show Picture... include un'anteprima interattiva del viewport in cui puoi trascinare l'immagine con il mouse e vedere le coordinate aggiornarsi in tempo reale.",
@@ -245,7 +239,7 @@
       "caption": "Finestra Show Picture con il canvas interattivo Placement Preview per posizionare HUD e illustrazioni con drag-and-drop."
     },
     "messageTypewriting": {
-      "badge": "#12 • Comando Evento → Show Text...",
+      "badge": "Comando Evento → Show Text...",
       "replaces": "Sostituisce i Plugin Message Core e Typewriter",
       "title": "Effetto Macchina da Scrivere (Caratteri/Sec) e Testo Formattato",
       "description": "Controlla il ritmo esatto di ogni dialogo. Show Text... permette di impostare la velocità di scrittura in caratteri al secondo, associare volto e nome del parlante e vedere l'anteprima live dei tag di formattazione.",
@@ -255,7 +249,7 @@
       "caption": "Finestra Show Text con Typewriter Speed impostata a 25 caratteri/sec, barra di formattazione e anteprima live."
     },
     "controlFogs": {
-      "badge": "#13 • Comando Evento → Show Fog / Change Fog",
+      "badge": "Comando Evento → Show Fog / Change Fog",
       "replaces": "Sostituisce i Plugin di Nebbie e Overlay Mappa",
       "title": "Controllo Completo delle Nebbie con Anteprima Live sulla Mappa",
       "description": "Aggiungi banchi di nebbia, nuvole, raggi di sole o oscurità sopra le tue mappe. Show Fog... mostra un'anteprima animata in tempo reale direttamente sopra la tua mappa mentre regoli velocità, scala, opacità, metodo di fusione e tonalità.",
@@ -265,7 +259,7 @@
       "caption": "Finestra Show Fog con anteprima animata in tempo reale della nebbia additiva sopra la mappa Oakwood Village."
     },
     "infiniteLayers": {
-      "badge": "#14 • Gestore Livelli Mappa (Scorciatoia: L)",
+      "badge": "Gestore Livelli Mappa",
       "replaces": "Sostituisce i Plugin di Livelli Illimitati e Z-Order",
       "title": "Livelli Mappa Infiniti e Riordino Libero dello Stack di Rendering",
       "description": "Perché accontentarsi di 4 livelli fissi? Aggiungi tutti i livelli mappa che desideri, rinominali e riordina liberamente la posizione di Parallax, Shadows, Characters e Fogs nello stack di rendering.",
@@ -275,7 +269,7 @@
       "caption": "Finestra Map Layers con 6 livelli tile personalizzati e livelli speciali Shadows, Characters e Fogs liberamente riordinabili."
     },
     "autotilesAnimated": {
-      "badge": "#15 • Resource Manager → Autotiles",
+      "badge": "Resource Manager → Autotiles",
       "replaces": "Sostituisce i Plugin di Autotile e Velocità Animazione",
       "title": "Supporto Completo per Autotile, Tile Animati e Velocità FPS",
       "description": "Importa qualsiasi foglio autotile e decidi esattamente come suddividerlo e animarlo. Scegli tra formato Full Autotile (47 tile) o Edge Autotile (16 tile), attiva l'animazione, imposta il numero di frame e regola gli FPS.",
@@ -285,7 +279,7 @@
       "caption": "Resource Manager aperto su Autotiles con formato Full 47-tile, 3 frame di animazione a 4 FPS e anteprima acqua animata."
     },
     "characterSlicing": {
-      "badge": "#16 • Resource Manager → Characters",
+      "badge": "Resource Manager → Characters",
       "replaces": "Sostituisce i Plugin di Slicing e Frame Personaggi",
       "title": "Controllo Totale sullo Slicing dei Personaggi",
       "description": "Basta rinominare i file con prefissi '$' o '%' solo per indicare al motore quanti frame ha uno sprite. Configura Characters Across/Down, Step Frames per Char, Directions e Vertical Offset in modo visuale.",
@@ -295,7 +289,7 @@
       "caption": "Resource Manager aperto su Characters con controlli di suddivisione frame e anteprima di camminata nelle 4 direzioni."
     },
     "filterableLists": {
-      "badge": "#17 • Ricerca e Filtro Istantaneo Ovunque",
+      "badge": "Ricerca e Filtro Istantaneo Ovunque",
       "replaces": "Sostituisce Addon di Ricerca Comandi ed Eventi",
       "title": "Liste Filtrabili in Tempo Reale in Tutto l'Editor",
       "description": "Che tu stia cercando un Comando Evento tra le varie schede, filtrando centinaia di eventi sulla mappa, cercando una Mappa nell'albero o selezionando Switch, Variabili e voci del Database—ogni lista si filtra mentre scrivi.",
@@ -305,7 +299,7 @@
       "caption": "Finestra Insert Event Command con filtro di ricerca attivo, affiancata dalle barre di ricerca Eventi e Mappe."
     },
     "easyDebug": {
-      "badge": "#18 • Comment Console Log + DevTools + Scheda Debug",
+      "badge": "Comment Console Log + DevTools + Scheda Debug",
       "replaces": "Sostituisce i Plugin di Debug e Console Inspector",
       "title": "Debug Immediato: console.log nei Commenti e Browser Inspector",
       "description": "Fare debug degli eventi è semplicissimo: spunta 'Output comment to developer console (console.log during playtest)' in qualsiasi comando Comment... e ispeziona oggetti di gioco, switch e variabili direttamente nei DevTools del browser.",
@@ -315,7 +309,7 @@
       "caption": "Finestra del comando Comment con l'opzione 'Output comment to developer console (console.log during playtest)' attiva."
     },
     "customInputs": {
-      "badge": "#19 • Database → Scheda Inputs",
+      "badge": "Database → Scheda Inputs",
       "replaces": "Sostituisce i Plugin di Rimappatura Tasti e Input Custom",
       "title": "Input di Gioco Personalizzabili e Azioni Custom con Nome",
       "description": "Rimappa i tasti di movimento e interazione predefiniti, attiva o disattiva i controlli mouse, oppure crea nuove azioni di input personalizzate (come 'Toggle Mystic Lantern' o 'Cast Quick Heal') da verificare nei Conditional Branch.",
@@ -325,7 +319,7 @@
       "caption": "Scheda Database → Inputs con i tasti standard e le azioni personalizzate come 'Toggle Mystic Lantern (KeyF)'."
     },
     "customTileSize": {
-      "badge": "#20 • Database → System → Tile / Grid Size",
+      "badge": "Database → System → Tile / Grid Size",
       "replaces": "Sostituisce i Plugin di Dimensione Griglia e Tile",
       "title": "Dimensione Tile e Griglia Personalizzabile (da 16×16 a 64×64)",
       "description": "Stai creando un'avventura retrò a 16×16, un classico JRPG a 32×32 o un mondo ad alta risoluzione a 48×48 / 64×64? Seleziona la dimensione nativa della griglia direttamente in Database → System.",
@@ -335,7 +329,7 @@
       "caption": "Scheda Database → System con il selettore Tile / Grid Size (16×16, 32×32, 48×48 e 64×64 px)."
     },
     "customViewport": {
-      "badge": "#21 • Database → System → Camera Viewport",
+      "badge": "Database → System → Camera Viewport",
       "replaces": "Sostituisce i Plugin di Risoluzione Schermo e Viewport",
       "title": "Dimensioni del Viewport di Gioco Personalizzabili",
       "description": "Definisci l'esatta risoluzione della telecamera di gioco. Scegli tra i preset widescreen e retrò pronti all'uso oppure inserisci larghezza e altezza personalizzate in pixel.",
@@ -345,13 +339,13 @@
       "caption": "Scheda Database → System con i preset di risoluzione Camera Viewport e i campi Width/Height personalizzati."
     },
     "pixiPerformance": {
-      "badge": "#22 • Motore di Rendering Accelerato Pixi.js",
+      "badge": "Motore di Rendering Accelerato Pixi.js",
       "replaces": "Progettato per 60 FPS Costanti su Web e Desktop",
       "title": "Prestazioni Straordinarie, Alimentate da Pixi.js",
       "description": "Sotto il cofano, il playtest e i giochi esportati da RPG Weaver girano su Pixi.js—garantendo rendering WebGL accelerato via hardware, 60 FPS granitici, nebbie multi-livello e playtest istantaneo nel browser.",
       "b1": "Pipeline di rendering Pixi.js accelerata via hardware con indicatore FPS live durante il Playtest",
       "b2": "Gestisce livelli mappa infiniti, autotile animati, nebbie additive e decine di eventi attivi a 60 FPS",
-      "b3": "Playtest istantaneo senza tempi di compilazione dalla schermata del titolo o direttamente dalla mappa corrente (Ctrl+Shift+Invio)",
+      "b3": "Playtest istantaneo senza tempi di compilazione dalla schermata del titolo o direttamente dalla mappa corrente",
       "caption": "Playtest live di Oakwood Village a 60 FPS costanti alimentato da Pixi.js."
     }
   },
@@ -360,7 +354,7 @@
     "title": "Inizia il Tuo Progetto in Pochi Secondi—Direttamente nel Browser.",
     "subtitle": "Apri RPG Weaver, clicca su 'Start project with default assets' e prova un motore RPG 2D in cui ogni funzione che desideri è già integrata.",
     "primaryBtn": "Apri la Web App RPG Weaver",
-    "secondaryBtn": "Rivedi Tutte le 22 Funzioni Integrate"
+    "secondaryBtn": "Rivedi le Funzioni Integrate"
   },
   "footer": {
     "description": "Un motore che unisce la semplicità di RPG Maker alla potenza di un engine professionale—senza bisogno di plugin esterni.",

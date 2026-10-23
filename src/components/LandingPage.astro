@@ -23,7 +23,7 @@ interface FeatureDef {
   featured?: boolean;
 }
 
-// Reordered Chapter 1A: Total Engine Customization & Pixi.js Performance (#19 to #22)
+// Engine Architecture: System & Pixi.js Performance
 const systemFeatures: FeatureDef[] = [
   {
     key: "pixiPerformance",
@@ -46,7 +46,7 @@ const systemFeatures: FeatureDef[] = [
   }
 ];
 
-// Reordered Chapter 1B: Infinite Mapping & Pro Asset Pipeline (#14 to #16)
+// Engine Architecture: Infinite Mapping & Pro Asset Pipeline
 const mappingFeatures: FeatureDef[] = [
   {
     key: "infiniteLayers",
@@ -67,7 +67,7 @@ const mappingFeatures: FeatureDef[] = [
   }
 ];
 
-// Chapter 2A: Next-Gen Event Engine & AI (#1 to #9)
+// Event Engine & AI
 const eventFeatures: FeatureDef[] = [
   {
     key: "pixelMovement",
@@ -110,7 +110,7 @@ const eventFeatures: FeatureDef[] = [
   }
 ];
 
-// Chapter 2B: Built-In HUD, Visuals & Atmosphere (#10 to #13)
+// Built-In HUD, Visuals & Atmosphere
 const visualFeatures: FeatureDef[] = [
   {
     key: "controlFogs",
@@ -133,7 +133,7 @@ const visualFeatures: FeatureDef[] = [
   }
 ];
 
-// Chapter 2C: Fast Workflow, Instant Filtering & Easy Debug (#17 to #18)
+// Fast Workflow, Instant Filtering & Easy Debug
 const workflowFeatures: FeatureDef[] = [
   {
     key: "filterableLists",
@@ -280,7 +280,7 @@ const workflowFeatures: FeatureDef[] = [
           </div>
         </div>
 
-        <!-- Horizontal Engine Telemetry Ledger (Replaces generic 4 boxes) -->
+        <!-- Horizontal Engine Telemetry Ledger -->
         <div class="mt-12 rounded-2xl border border-[#101b17]/15 dark:border-teal-400/20 bg-white/85 dark:bg-[#091512]/90 backdrop-blur-md overflow-hidden">
           <div class="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 divide-x divide-[#101b17]/10 dark:divide-teal-400/15">
             <div class="p-5 sm:px-7 flex items-center gap-4">
@@ -326,14 +326,13 @@ const workflowFeatures: FeatureDef[] = [
     <div class="h-px w-full loom-thread-line"></div>
 
     <!-- ==========================================
-         CHAPTER 01 (REORDERED): CORE ENGINE ARCHITECTURE, PIXI.JS & INFINITE MAPPING
+         CORE ENGINE ARCHITECTURE: PIXI.JS & INFINITE MAPPING
          ========================================== -->
     <section id="engine" class="py-20 sm:py-28">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-24">
-        <!-- 1A: System & Pixi.js 60 FPS Runtime -->
+        <!-- System & Pixi.js 60 FPS Runtime -->
         <div id="system">
           <SectionHeader
-            chapterNum="01.A"
             badge={t("sections.system.badge")}
             title={t("sections.system.title")}
             subtitle={t("sections.system.subtitle")}
@@ -363,10 +362,9 @@ const workflowFeatures: FeatureDef[] = [
           </div>
         </div>
 
-        <!-- 1B: Infinite Map Layers & Spritesheet Slicing -->
+        <!-- Infinite Map Layers & Spritesheet Slicing -->
         <div id="mapping">
           <SectionHeader
-            chapterNum="01.B"
             badge={t("sections.mapping.badge")}
             title={t("sections.mapping.title")}
             subtitle={t("sections.mapping.subtitle")}
@@ -399,153 +397,110 @@ const workflowFeatures: FeatureDef[] = [
     </section>
 
     <!-- ==========================================
-         CHAPTER 02: INTERACTIVE FEATURE BENTO EXPLORER (EVENTS, HUD & WORKFLOW)
+         FEATURES SHOWCASE: EVENTS, HUD & WORKFLOW
          ========================================== -->
     <section id="features" class="py-20 sm:py-28 border-t border-[#101b17]/12 dark:border-teal-400/15 bg-[#eceae0]/50 dark:bg-[#07100d]">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <!-- Quick Category Filter / Jump Bar -->
-        <div class="sticky top-18 z-30 mb-14 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#101b17]/15 dark:border-teal-400/25 bg-[#faf9f4]/95 dark:bg-[#0b1915]/95 p-2.5 shadow-lg backdrop-blur-md">
-          <div class="flex flex-wrap items-center gap-1.5">
-            <button
-              type="button"
-              data-filter-group="all"
-              class="feature-group-btn rounded-xl px-3.5 py-2 font-mono text-xs font-bold transition cursor-pointer bg-teal-700 dark:bg-teal-400 text-white dark:text-[#06100e]"
-            >
-              {t("explorer.all")}
-            </button>
-            <button
-              type="button"
-              data-filter-group="events"
-              class="feature-group-btn rounded-xl px-3.5 py-2 font-mono text-xs font-bold transition cursor-pointer text-[#2c3f38] dark:text-teal-100/80 hover:bg-teal-500/10"
-            >
-              {t("explorer.catEvents")} (9)
-            </button>
-            <button
-              type="button"
-              data-filter-group="visuals"
-              class="feature-group-btn rounded-xl px-3.5 py-2 font-mono text-xs font-bold transition cursor-pointer text-[#2c3f38] dark:text-teal-100/80 hover:bg-teal-500/10"
-            >
-              {t("explorer.catVisuals")} (4)
-            </button>
-            <button
-              type="button"
-              data-filter-group="workflow"
-              class="feature-group-btn rounded-xl px-3.5 py-2 font-mono text-xs font-bold transition cursor-pointer text-[#2c3f38] dark:text-teal-100/80 hover:bg-teal-500/10"
-            >
-              {t("explorer.catWorkflow")} (2)
-            </button>
-          </div>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-24">
+        <!-- Next-Gen Event Engine & AI -->
+        <div id="events">
+          <SectionHeader
+            badge={t("sections.events.badge")}
+            title={t("sections.events.title")}
+            subtitle={t("sections.events.subtitle")}
+            accentColor="amber"
+          />
 
-          <div class="hidden xl:flex items-center gap-2 pr-2 font-mono text-[11px] text-amber-700 dark:text-amber-300">
-            <span>🔍 {t("explorer.zoomHint")}</span>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {eventFeatures.map((feat) => (
+              <FeatureShowcaseCard
+                badge={t(`features.${feat.key}.badge`)}
+                replacesPlugin={t(`features.${feat.key}.replaces`)}
+                title={t(`features.${feat.key}.title`)}
+                description={t(`features.${feat.key}.description`)}
+                bullets={[
+                  t(`features.${feat.key}.b1`),
+                  t(`features.${feat.key}.b2`),
+                  t(`features.${feat.key}.b3`)
+                ]}
+                mediaSrc={feat.mediaSrc}
+                posterSrc={feat.posterSrc}
+                mediaCaption={t(`features.${feat.key}.caption`)}
+                isVideo={feat.isVideo}
+                featured={feat.featured}
+                category="events"
+              />
+            ))}
           </div>
         </div>
 
-        <div class="space-y-24">
-          <!-- 2A: Next-Gen Event Engine & AI (#1 - #9) -->
-          <div id="events" data-section-group="events">
-            <SectionHeader
-              chapterNum="02.A"
-              badge={t("sections.events.badge")}
-              title={t("sections.events.title")}
-              subtitle={t("sections.events.subtitle")}
-              accentColor="amber"
-            />
+        <!-- Built-In HUD, Visuals & Atmosphere -->
+        <div id="visuals">
+          <SectionHeader
+            badge={t("sections.visuals.badge")}
+            title={t("sections.visuals.title")}
+            subtitle={t("sections.visuals.subtitle")}
+            accentColor="cyan"
+          />
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {eventFeatures.map((feat) => (
-                <FeatureShowcaseCard
-                  badge={t(`features.${feat.key}.badge`)}
-                  replacesPlugin={t(`features.${feat.key}.replaces`)}
-                  title={t(`features.${feat.key}.title`)}
-                  description={t(`features.${feat.key}.description`)}
-                  bullets={[
-                    t(`features.${feat.key}.b1`),
-                    t(`features.${feat.key}.b2`),
-                    t(`features.${feat.key}.b3`)
-                  ]}
-                  mediaSrc={feat.mediaSrc}
-                  posterSrc={feat.posterSrc}
-                  mediaCaption={t(`features.${feat.key}.caption`)}
-                  isVideo={feat.isVideo}
-                  featured={feat.featured}
-                  category="events"
-                />
-              ))}
-            </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {visualFeatures.map((feat) => (
+              <FeatureShowcaseCard
+                badge={t(`features.${feat.key}.badge`)}
+                replacesPlugin={t(`features.${feat.key}.replaces`)}
+                title={t(`features.${feat.key}.title`)}
+                description={t(`features.${feat.key}.description`)}
+                bullets={[
+                  t(`features.${feat.key}.b1`),
+                  t(`features.${feat.key}.b2`),
+                  t(`features.${feat.key}.b3`)
+                ]}
+                mediaSrc={feat.mediaSrc}
+                posterSrc={feat.posterSrc}
+                mediaCaption={t(`features.${feat.key}.caption`)}
+                isVideo={feat.isVideo}
+                featured={feat.featured}
+                category="visuals"
+              />
+            ))}
           </div>
+        </div>
 
-          <!-- 2B: Built-In HUD, Visuals & Atmosphere (#10 - #13) -->
-          <div id="visuals" data-section-group="visuals">
-            <SectionHeader
-              chapterNum="02.B"
-              badge={t("sections.visuals.badge")}
-              title={t("sections.visuals.title")}
-              subtitle={t("sections.visuals.subtitle")}
-              accentColor="cyan"
-            />
+        <!-- Fast Workflow, Instant Filtering & Easy Debug -->
+        <div id="workflow">
+          <SectionHeader
+            badge={t("sections.workflow.badge")}
+            title={t("sections.workflow.title")}
+            subtitle={t("sections.workflow.subtitle")}
+            accentColor="teal"
+          />
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {visualFeatures.map((feat) => (
-                <FeatureShowcaseCard
-                  badge={t(`features.${feat.key}.badge`)}
-                  replacesPlugin={t(`features.${feat.key}.replaces`)}
-                  title={t(`features.${feat.key}.title`)}
-                  description={t(`features.${feat.key}.description`)}
-                  bullets={[
-                    t(`features.${feat.key}.b1`),
-                    t(`features.${feat.key}.b2`),
-                    t(`features.${feat.key}.b3`)
-                  ]}
-                  mediaSrc={feat.mediaSrc}
-                  posterSrc={feat.posterSrc}
-                  mediaCaption={t(`features.${feat.key}.caption`)}
-                  isVideo={feat.isVideo}
-                  featured={feat.featured}
-                  category="visuals"
-                />
-              ))}
-            </div>
-          </div>
-
-          <!-- 2C: Fast Workflow, Instant Filtering & Easy Debug (#17 - #18) -->
-          <div id="workflow" data-section-group="workflow">
-            <SectionHeader
-              chapterNum="02.C"
-              badge={t("sections.workflow.badge")}
-              title={t("sections.workflow.title")}
-              subtitle={t("sections.workflow.subtitle")}
-              accentColor="teal"
-            />
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {workflowFeatures.map((feat) => (
-                <FeatureShowcaseCard
-                  badge={t(`features.${feat.key}.badge`)}
-                  replacesPlugin={t(`features.${feat.key}.replaces`)}
-                  title={t(`features.${feat.key}.title`)}
-                  description={t(`features.${feat.key}.description`)}
-                  bullets={[
-                    t(`features.${feat.key}.b1`),
-                    t(`features.${feat.key}.b2`),
-                    t(`features.${feat.key}.b3`)
-                  ]}
-                  mediaSrc={feat.mediaSrc}
-                  posterSrc={feat.posterSrc}
-                  mediaCaption={t(`features.${feat.key}.caption`)}
-                  isVideo={feat.isVideo}
-                  featured={feat.featured}
-                  category="workflow"
-                />
-              ))}
-            </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {workflowFeatures.map((feat) => (
+              <FeatureShowcaseCard
+                badge={t(`features.${feat.key}.badge`)}
+                replacesPlugin={t(`features.${feat.key}.replaces`)}
+                title={t(`features.${feat.key}.title`)}
+                description={t(`features.${feat.key}.description`)}
+                bullets={[
+                  t(`features.${feat.key}.b1`),
+                  t(`features.${feat.key}.b2`),
+                  t(`features.${feat.key}.b3`)
+                ]}
+                mediaSrc={feat.mediaSrc}
+                posterSrc={feat.posterSrc}
+                mediaCaption={t(`features.${feat.key}.caption`)}
+                isVideo={feat.isVideo}
+                featured={feat.featured}
+                category="workflow"
+              />
+            ))}
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         CHAPTER 03 (REORDERED): THE ZERO-PLUGIN LEDGER
+         THE ZERO-PLUGIN LEDGER
          ========================================== -->
     <NoPluginsBanner lang={lang} />
 
@@ -692,35 +647,7 @@ const workflowFeatures: FeatureDef[] = [
     });
   });
 
-  // 2. Interactive Feature Category Filter
-  const filterBtns = document.querySelectorAll<HTMLButtonElement>("[data-filter-group]");
-  const sectionGroups = document.querySelectorAll<HTMLElement>("[data-section-group]");
-
-  filterBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const targetGroup = btn.getAttribute("data-filter-group") || "all";
-      filterBtns.forEach((b) => {
-        const isActive = b.getAttribute("data-filter-group") === targetGroup;
-        b.classList.toggle("bg-teal-700", isActive);
-        b.classList.toggle("dark:bg-teal-400", isActive);
-        b.classList.toggle("text-white", isActive);
-        b.classList.toggle("dark:text-[#06100e]", isActive);
-        b.classList.toggle("text-[#2c3f38]", !isActive);
-        b.classList.toggle("dark:text-teal-100/80", !isActive);
-      });
-
-      sectionGroups.forEach((sec) => {
-        const groupName = sec.getAttribute("data-section-group");
-        if (targetGroup === "all" || groupName === targetGroup) {
-          sec.classList.remove("hidden");
-        } else {
-          sec.classList.add("hidden");
-        }
-      });
-    });
-  });
-
-  // 3. Fullscreen Media Lightbox Inspector
+  // 2. Fullscreen Media Lightbox Inspector
   const lightbox = document.getElementById("weaver-lightbox");
   const lightboxTitle = document.getElementById("weaver-lightbox-title");
   const lightboxBody = document.getElementById("weaver-lightbox-body");

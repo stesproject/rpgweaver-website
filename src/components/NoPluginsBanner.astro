@@ -11,19 +11,18 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const replacedCategories = [
-  { key: "movementAi", index: "01" },
-  { key: "cameraAndTransfer", index: "02" },
-  { key: "hudAndPictures", index: "03" },
-  { key: "templatesAndState", index: "04" },
-  { key: "layersAndTiles", index: "05" },
-  { key: "inputsAndDebug", index: "06" }
+  { key: "movementAi" },
+  { key: "cameraAndTransfer" },
+  { key: "hudAndPictures" },
+  { key: "templatesAndState" },
+  { key: "layersAndTiles" },
+  { key: "inputsAndDebug" }
 ];
 ---
 
 <section id="no-plugins" class="relative py-20 sm:py-28 border-t border-[#101b17]/12 dark:border-teal-400/15 bg-[#eae8df]/60 dark:bg-[#08120f]">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <SectionHeader
-      chapterNum="03"
       badge={t("noPlugins.badge")}
       title={t("noPlugins.title")}
       subtitle={t("noPlugins.subtitle")}
@@ -114,17 +113,17 @@ const replacedCategories = [
       </div>
     </div>
 
-    <!-- 6 Native Core Modules Matrix -->
+    <!-- Native Core Modules Matrix -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 rounded-2xl border border-[#101b17]/15 dark:border-teal-400/20 overflow-hidden bg-[#101b17]/10 dark:bg-teal-400/15 gap-px">
       {replacedCategories.map((cat) => (
         <div class="bg-[#faf9f4] dark:bg-[#0a1613] p-6 flex flex-col justify-between hover:bg-white dark:hover:bg-[#0e1f1b] transition-colors">
           <div>
             <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">
-                MODULE // {cat.index}
+              <span class="font-mono text-xs font-bold text-teal-800 dark:text-teal-300">
+                {t(`noPlugins.cards.${cat.key}.tag`)}
               </span>
               <span class="rounded border border-teal-600/25 dark:border-teal-400/25 bg-teal-500/10 px-2 py-0.5 font-mono text-[10px] font-bold text-teal-800 dark:text-teal-300">
-                {t(`noPlugins.cards.${cat.key}.tag`)}
+                {t("noPlugins.builtInBadge")}
               </span>
             </div>
             <h4 class="font-display text-lg font-bold text-[#101b17] dark:text-white mb-2">
