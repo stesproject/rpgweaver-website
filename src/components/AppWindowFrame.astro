@@ -7,6 +7,7 @@ interface Props {
   caption?: string;
   isVideo?: boolean;
   priority?: boolean;
+  accentColor?: "teal" | "amber" | "emerald" | "cyan" | "violet";
 }
 
 const {
@@ -16,12 +17,32 @@ const {
   alt,
   caption,
   isVideo = false,
-  priority = false
+  priority = false,
+  accentColor = "teal"
 } = Astro.props;
+
+const glowVariants: Record<string, string> = {
+  emerald: "hover:shadow-[0_0_60px_-15px_rgba(16,185,129,0.30)] dark:shadow-[0_0_50px_-20px_rgba(16,185,129,0.20)] hover:border-emerald-500/40",
+  amber: "hover:shadow-[0_0_60px_-15px_rgba(245,158,11,0.30)] dark:shadow-[0_0_50px_-20px_rgba(245,158,11,0.20)] hover:border-amber-500/40",
+  cyan: "hover:shadow-[0_0_60px_-15px_rgba(6,182,212,0.30)] dark:shadow-[0_0_50px_-20px_rgba(6,182,212,0.20)] hover:border-cyan-500/40",
+  violet: "hover:shadow-[0_0_60px_-15px_rgba(139,92,246,0.30)] dark:shadow-[0_0_50px_-20px_rgba(139,92,246,0.20)] hover:border-violet-500/40",
+  teal: "hover:shadow-[0_0_60px_-15px_rgba(20,184,166,0.30)] dark:shadow-[0_0_50px_-20px_rgba(20,184,166,0.20)] hover:border-teal-500/40"
+};
+
+const statusDotColors: Record<string, string> = {
+  emerald: "bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)]",
+  amber: "bg-amber-400 shadow-[0_0_8px_rgba(245,158,11,0.8)]",
+  cyan: "bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.8)]",
+  violet: "bg-violet-400 shadow-[0_0_8px_rgba(139,92,246,0.8)]",
+  teal: "bg-teal-400 shadow-[0_0_8px_rgba(20,184,166,0.8)]"
+};
 ---
 
 <figure
-  class="group/frame relative rounded-xl border border-[#101b17]/15 dark:border-teal-400/20 bg-[#101b17] dark:bg-[#07110e] shadow-xl shadow-teal-950/10 dark:shadow-black/70 overflow-hidden cursor-pointer"
+  class:list={[
+    "group/frame relative rounded-2xl border border-black/10 dark:border-white/10 bg-[#0e1613] dark:bg-[#070d0b] shadow-2xl overflow-hidden cursor-pointer transition-all duration-500 transform-gpu",
+    glowVariants[accentColor] || glowVariants.teal
+  ]}
   data-lightbox-trigger
   data-media-src={mediaSrc}
   data-poster-src={posterSrc || ""}
@@ -29,23 +50,34 @@ const {
   data-title={headerTitle}
   data-caption={caption || alt}
 >
-  <!-- Engine HUD Top Bar -->
-  <div class="flex items-center justify-between border-b border-white/10 bg-[#14231e] dark:bg-[#0b1915] px-3.5 py-2 text-[11px] font-mono">
-    <div class="flex items-center gap-2 min-w-0">
-      <span class="truncate text-teal-100/90 font-medium">{headerTitle}</span>
+  <!-- Studio Viewport Header Bar -->
+  <div class="flex items-center justify-between border-b border-white/10 bg-[#14201b] dark:bg-[#0c1411] px-4 py-2.5 text-[11px] font-mono select-none">
+    <!-- Window Controls & Live Engine Status -->
+    <div class="flex items-center gap-2.5 min-w-0">
+      <div class="flex items-center gap-1.5 shrink-0" aria-hidden="true">
+        <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f56]/90 group-hover/frame:bg-[#ff5f56] transition-colors"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]/90 group-hover/frame:bg-[#ffbd2e] transition-colors"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-[#27c93f]/90 group-hover/frame:bg-[#27c93f] transition-colors"></span>
+      </div>
+      <div class="h-3 w-px bg-white/10 shrink-0"></div>
+      <div class="flex items-center gap-2 truncate">
+        <span class:list={["h-1.5 w-1.5 rounded-full shrink-0 animate-pulse", statusDotColors[accentColor] || "bg-emerald-400"]}></span>
+        <span class="truncate text-white/90 font-medium tracking-tight text-xs">{headerTitle}</span>
+      </div>
     </div>
 
-    <div class="flex items-center gap-2 shrink-0 text-teal-300/60">
-      <span class="inline-flex h-5 w-5 items-center justify-center rounded bg-white/5 text-teal-200/80 group-hover/frame:bg-teal-400 group-hover/frame:text-[#06100e] transition-colors" title="Expand media">
-        <svg class="h-3 w-3" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <!-- Right: Expand Button -->
+    <div class="flex items-center gap-2.5 shrink-0">
+      <span class="inline-flex h-6 w-6 items-center justify-center rounded-lg bg-white/5 text-white/75 group-hover/frame:bg-white/20 group-hover/frame:text-white transition-all transform group-hover/frame:scale-105" title="Expand Fullscreen View">
+        <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4h4M16 8V4h-4M4 12v4h4M16 12v4h-4" />
         </svg>
       </span>
     </div>
   </div>
 
-  <!-- Media Viewport -->
-  <div class="relative bg-[#070f0c] aspect-16/10 w-full overflow-hidden">
+  <!-- Media Viewport (Aspect 16:10) -->
+  <div class="relative bg-[#050907] aspect-16/10 w-full overflow-hidden">
     {isVideo ? (
       <video
         src={mediaSrc}
@@ -55,22 +87,22 @@ const {
         muted
         playsinline
         preload="metadata"
-        class="h-full w-full object-cover transition-transform duration-500 group-hover/frame:scale-[1.015]"
+        class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover/frame:scale-[1.025]"
       ></video>
     ) : (
       <img
         src={mediaSrc}
         alt={alt}
         loading={priority ? "eager" : "lazy"}
-        class="h-full w-full object-cover transition-transform duration-500 group-hover/frame:scale-[1.015]"
+        class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover/frame:scale-[1.025]"
       />
     )}
   </div>
 
   <!-- Optional Bottom Caption Readout -->
   {caption && (
-    <figcaption class="border-t border-white/10 bg-[#0d1915] px-3.5 py-2 text-[11px] font-mono text-teal-100/70">
-      <span class="truncate block">{caption}</span>
+    <figcaption class="border-t border-white/10 bg-[#0c1411] px-4 py-2 text-[11px] font-mono text-white/70">
+      <span class="truncate block text-emerald-200/80 dark:text-emerald-300/80">// {caption}</span>
     </figcaption>
   )}
 </figure>

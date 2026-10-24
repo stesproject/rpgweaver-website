@@ -20,7 +20,7 @@ const replacedCategories = [
 ];
 ---
 
-<section id="no-plugins" class="relative py-20 sm:py-28 border-t border-[#101b17]/12 dark:border-teal-400/15 bg-[#eae8df]/60 dark:bg-[#08120f]">
+<section id="no-plugins" class="relative py-20 sm:py-28 border-t border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-black/30">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <SectionHeader
       badge={t("noPlugins.badge")}
@@ -30,28 +30,29 @@ const replacedCategories = [
     />
 
     <!-- Diagnostic Diff Comparison Ledger -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14">
       <!-- Legacy RPG Maker Plugin Stack -->
-      <div class="lg:col-span-5 rounded-2xl border border-rose-500/30 bg-[#f9f5f5] dark:bg-[#140c0f] p-6 sm:p-7 flex flex-col justify-between">
+      <div class="lg:col-span-5 rounded-3xl border border-rose-500/30 bg-rose-50/50 dark:bg-rose-950/15 p-6 sm:p-8 flex flex-col justify-between shadow-lg">
         <div>
-          <div class="flex items-center justify-between border-b border-rose-500/20 pb-3.5 mb-5">
+          <div class="flex items-center justify-between border-b border-rose-500/20 pb-4 mb-5">
             <div class="flex items-center gap-2.5">
-              <span class="inline-flex h-6 w-6 items-center justify-center rounded bg-rose-500/20 font-mono text-xs font-bold text-rose-600 dark:text-rose-400">
-                !
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-lg bg-rose-500/20 font-mono text-xs font-bold text-rose-600 dark:text-rose-400">
+                ✕
               </span>
-              <h3 class="font-display text-base sm:text-lg font-bold text-[#101b17] dark:text-rose-100">
+              <h3 class="font-display text-lg font-bold text-[#101b17] dark:text-rose-100">
                 {t("noPlugins.oldWayTitle")}
               </h3>
             </div>
-            <span class="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-rose-500/15 text-rose-700 dark:text-rose-300 font-bold">
+            <span class="font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-700 dark:text-rose-300 font-bold">
               LEGACY
             </span>
           </div>
-          <p class="font-mono text-xs text-rose-700/80 dark:text-rose-300/75 mb-4">
+
+          <p class="font-mono text-xs text-rose-700/80 dark:text-rose-300/75 mb-5">
             // {t("noPlugins.oldWaySubtitle")}
           </p>
 
-          <ul class="space-y-3 text-xs sm:text-sm text-[#3c2a2d] dark:text-rose-100/80">
+          <ul class="space-y-3.5 text-xs sm:text-sm text-[#3c2a2d] dark:text-rose-100/80">
             <li class="flex items-start gap-2.5">
               <span class="font-mono text-rose-500 font-bold shrink-0">[-]</span>
               <span>{t("noPlugins.oldPoint1")}</span>
@@ -73,40 +74,40 @@ const replacedCategories = [
       </div>
 
       <!-- RPG Weaver Native Core Architecture -->
-      <div class="lg:col-span-7 weaver-card corner-ticks rounded-2xl border-2 border-teal-600/40 dark:border-teal-400/40 bg-gradient-to-br from-white via-[#f3faf8] to-[#f8f4e8] dark:from-[#0b1c17] dark:via-[#0d221c] dark:to-[#171b12] p-6 sm:p-8 shadow-xl">
-        <div class="flex items-center justify-between border-b border-teal-600/20 dark:border-teal-400/20 pb-3.5 mb-5">
+      <div class="lg:col-span-7 weaver-card rounded-3xl border-2 border-emerald-600/40 dark:border-emerald-400/40 bg-gradient-to-br from-white via-emerald-50/20 to-teal-50/20 dark:from-[#0a1512] dark:via-[#0c1a16] dark:to-[#08120e] p-6 sm:p-8 shadow-2xl">
+        <div class="flex items-center justify-between border-b border-emerald-600/20 dark:border-emerald-400/20 pb-4 mb-5">
           <div class="flex items-center gap-2.5">
-            <span class="inline-flex h-6 w-6 items-center justify-center rounded bg-teal-500/20 font-mono text-xs font-bold text-teal-700 dark:text-teal-300">
+            <span class="inline-flex h-6 w-6 items-center justify-center rounded-lg bg-emerald-500/20 font-mono text-xs font-bold text-emerald-700 dark:text-emerald-300">
               ✓
             </span>
             <h3 class="font-display text-lg sm:text-xl font-bold text-[#101b17] dark:text-white">
               {t("noPlugins.newWayTitle")}
             </h3>
           </div>
-          <span class="font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded bg-teal-600 dark:bg-teal-400 text-white dark:text-[#06100e] font-bold">
+          <span class="font-mono text-[10px] uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-600 dark:bg-emerald-400 text-white dark:text-[#06100e] font-extrabold shadow-sm">
             {t("noPlugins.builtInBadge")}
           </span>
         </div>
 
-        <p class="font-mono text-xs text-teal-800 dark:text-amber-300/90 mb-5">
+        <p class="font-mono text-xs text-emerald-800 dark:text-emerald-300/90 mb-5">
           // {t("noPlugins.newWaySubtitle")}
         </p>
 
         <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-[#152620] dark:text-teal-50">
-          <li class="rounded-xl border border-teal-600/15 dark:border-teal-400/15 bg-white/70 dark:bg-[#07120f]/70 p-3.5 flex items-start gap-2.5">
-            <span class="font-mono text-teal-600 dark:text-teal-400 font-bold shrink-0">[+]</span>
+          <li class="rounded-2xl border border-emerald-600/15 dark:border-emerald-400/15 bg-white/75 dark:bg-[#060e0b]/75 p-4 flex items-start gap-2.5 shadow-sm">
+            <span class="font-mono text-emerald-600 dark:text-emerald-400 font-bold shrink-0">[+]</span>
             <span>{t("noPlugins.newPoint1")}</span>
           </li>
-          <li class="rounded-xl border border-teal-600/15 dark:border-teal-400/15 bg-white/70 dark:bg-[#07120f]/70 p-3.5 flex items-start gap-2.5">
-            <span class="font-mono text-teal-600 dark:text-teal-400 font-bold shrink-0">[+]</span>
+          <li class="rounded-2xl border border-emerald-600/15 dark:border-emerald-400/15 bg-white/75 dark:bg-[#060e0b]/75 p-4 flex items-start gap-2.5 shadow-sm">
+            <span class="font-mono text-emerald-600 dark:text-emerald-400 font-bold shrink-0">[+]</span>
             <span>{t("noPlugins.newPoint2")}</span>
           </li>
-          <li class="rounded-xl border border-teal-600/15 dark:border-teal-400/15 bg-white/70 dark:bg-[#07120f]/70 p-3.5 flex items-start gap-2.5">
-            <span class="font-mono text-teal-600 dark:text-teal-400 font-bold shrink-0">[+]</span>
+          <li class="rounded-2xl border border-emerald-600/15 dark:border-emerald-400/15 bg-white/75 dark:bg-[#060e0b]/75 p-4 flex items-start gap-2.5 shadow-sm">
+            <span class="font-mono text-emerald-600 dark:text-emerald-400 font-bold shrink-0">[+]</span>
             <span>{t("noPlugins.newPoint3")}</span>
           </li>
-          <li class="rounded-xl border border-teal-600/15 dark:border-teal-400/15 bg-white/70 dark:bg-[#07120f]/70 p-3.5 flex items-start gap-2.5">
-            <span class="font-mono text-teal-600 dark:text-teal-400 font-bold shrink-0">[+]</span>
+          <li class="rounded-2xl border border-emerald-600/15 dark:border-emerald-400/15 bg-white/75 dark:bg-[#060e0b]/75 p-4 flex items-start gap-2.5 shadow-sm">
+            <span class="font-mono text-emerald-600 dark:text-emerald-400 font-bold shrink-0">[+]</span>
             <span>{t("noPlugins.newPoint4")}</span>
           </li>
         </ul>
@@ -114,15 +115,15 @@ const replacedCategories = [
     </div>
 
     <!-- Native Core Modules Matrix -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 rounded-2xl border border-[#101b17]/15 dark:border-teal-400/20 overflow-hidden bg-[#101b17]/10 dark:bg-teal-400/15 gap-px">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 rounded-3xl border border-black/10 dark:border-white/10 overflow-hidden bg-black/5 dark:bg-white/5 gap-px shadow-xl">
       {replacedCategories.map((cat) => (
-        <div class="bg-[#faf9f4] dark:bg-[#0a1613] p-6 flex flex-col justify-between hover:bg-white dark:hover:bg-[#0e1f1b] transition-colors">
+        <div class="bg-white/95 dark:bg-[#0c1613] p-7 flex flex-col justify-between hover:bg-emerald-50/30 dark:hover:bg-[#101f1a] transition-colors">
           <div>
             <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="font-mono text-xs font-bold text-teal-800 dark:text-teal-300">
+              <span class="font-mono text-xs font-bold text-emerald-800 dark:text-emerald-300">
                 {t(`noPlugins.cards.${cat.key}.tag`)}
               </span>
-              <span class="rounded border border-teal-600/25 dark:border-teal-400/25 bg-teal-500/10 px-2 py-0.5 font-mono text-[10px] font-bold text-teal-800 dark:text-teal-300">
+              <span class="rounded-md border border-emerald-600/25 dark:border-emerald-400/25 bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-800 dark:text-emerald-300">
                 {t("noPlugins.builtInBadge")}
               </span>
             </div>

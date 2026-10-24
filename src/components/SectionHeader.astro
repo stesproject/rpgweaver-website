@@ -9,26 +9,35 @@ interface Props {
 const { badge, title, subtitle, accentColor = "teal" } = Astro.props;
 
 const badgeStyles: Record<string, string> = {
-  teal: "border-teal-600/35 bg-teal-600/10 text-teal-800 dark:border-teal-400/35 dark:bg-teal-400/10 dark:text-teal-300",
-  emerald: "border-emerald-600/35 bg-emerald-600/10 text-emerald-800 dark:border-emerald-400/35 dark:bg-emerald-400/10 dark:text-emerald-300",
-  amber: "border-amber-600/35 bg-amber-500/10 text-amber-800 dark:border-amber-400/35 dark:bg-amber-400/10 dark:text-amber-300",
-  cyan: "border-cyan-600/35 bg-cyan-500/10 text-cyan-800 dark:border-cyan-400/35 dark:bg-cyan-400/10 dark:text-cyan-300",
-  rose: "border-rose-600/35 bg-rose-500/10 text-rose-800 dark:border-rose-400/35 dark:bg-rose-400/10 dark:text-rose-300",
-  violet: "border-teal-600/35 bg-teal-600/10 text-teal-800 dark:border-teal-400/35 dark:bg-teal-400/10 dark:text-teal-300"
+  teal: "border-teal-600/30 bg-teal-500/10 text-teal-800 dark:border-teal-400/30 dark:bg-teal-400/10 dark:text-teal-300",
+  emerald: "border-emerald-600/30 bg-emerald-500/10 text-emerald-800 dark:border-emerald-400/30 dark:bg-emerald-400/10 dark:text-emerald-300",
+  amber: "border-amber-600/30 bg-amber-500/10 text-amber-800 dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-300",
+  cyan: "border-cyan-600/30 bg-cyan-500/10 text-cyan-800 dark:border-cyan-400/30 dark:bg-cyan-400/10 dark:text-cyan-300",
+  rose: "border-rose-600/30 bg-rose-500/10 text-rose-800 dark:border-rose-400/30 dark:bg-rose-400/10 dark:text-rose-300",
+  violet: "border-violet-600/30 bg-violet-500/10 text-violet-800 dark:border-violet-400/30 dark:bg-violet-400/10 dark:text-violet-300"
+};
+
+const borderStyles: Record<string, string> = {
+  teal: "border-teal-500/40",
+  emerald: "border-emerald-500/40",
+  amber: "border-amber-500/40",
+  cyan: "border-cyan-500/40",
+  rose: "border-rose-500/40",
+  violet: "border-violet-500/40"
 };
 ---
 
-<div class="mb-12 border-b border-[#101b17]/12 dark:border-teal-400/15 pb-8">
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
-    <div class="lg:col-span-7">
-      <div class="flex flex-wrap items-center gap-3 mb-3">
+<div class="mb-14 border-b border-black/10 dark:border-white/10 pb-8">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+    <div class="lg:col-span-7 space-y-3">
+      <div class="flex flex-wrap items-center gap-3">
         <span
           class:list={[
-            "inline-flex items-center gap-2 rounded-md border px-2.5 py-1 font-mono text-[11px] font-bold uppercase tracking-wider",
+            "inline-flex items-center gap-2 rounded-lg border px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider",
             badgeStyles[accentColor] || badgeStyles.teal
           ]}
         >
-          <span class="h-1.5 w-1.5 rounded-xs bg-current"></span>
+          <span class="h-1.5 w-1.5 rounded-full bg-current animate-pulse"></span>
           <span>{badge}</span>
         </span>
       </div>
@@ -37,7 +46,7 @@ const badgeStyles: Record<string, string> = {
       </h2>
     </div>
 
-    <div class="lg:col-span-5 lg:border-l-2 lg:border-teal-600/30 dark:lg:border-teal-400/30 lg:pl-6">
+    <div class:list={["lg:col-span-5 lg:border-l-2 lg:pl-6", borderStyles[accentColor] || borderStyles.teal]}>
       <p class="text-sm sm:text-base text-[#364943] dark:text-teal-100/75 leading-relaxed">
         {subtitle}
       </p>
