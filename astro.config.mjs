@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://rpg-weaver.web.app",
+  site: "https://get-rpg-weaver.web.app",
   compressHTML: true,
   integrations: [sitemap()],
   vite: {

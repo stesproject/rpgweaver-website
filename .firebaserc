@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "rpgweaver-website"
+  },
+  "targets": {
+    "rpgweaver-website": {
+      "hosting": {
+        "website": [
+          "get-rpg-weaver"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
